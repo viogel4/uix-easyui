@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>050-窗口组件</title>
+		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+		<!-- 常用icon -->
+		<link rel="stylesheet" type="text/css" href="css/uix.icon.css" />
+
+		<script src="jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="../easyui/easyloader.js" type="text/javascript" charset="utf-8"></script>
+		<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.content {
+				padding: 20px;
+				margin: 10px;
+				border: 1px dashed #ccc;
+				overflow: hidden;
+				box-sizing: border-box;
+				width: calc(100% - 20px);
+				transition: all 0.5s;
+			}
+
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+
+			#win-pos {
+				display: inline-block;
+				width: 80px;
+				height: 30px;
+				box-sizing: border-box;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 30px;
+			}
+
+			.floor1>* {
+				vertical-align: middle;
+			}
+		</style>
+		<script type="text/javascript">
+			easyloader.locale = "zh_CN";
+
+			// 注意：velocity.ui.min.js中好多效果不能用，但凡函数带3d的都不能用，如
+			//translate3d、rotate3d等，但更换成translateX函数或translateY函数就好了
+			$(function() {
+				using("window", function() {
+					//必须通过在构造实例过程中指定的minimize才有效，否则就要通过获取panel(而不是window)的options来进行指定
+					$("#win").window({
+						minimize: function(jq) {
+							var p = $("#win-pos");
+							var offset = p.offset();
+
+							jq.window("moveTo", {
+								left: offset.left,
+								top: offset.top,
+								width: p.width(),
+								height: p.height(),
+								complete: function(t) {
+									t.window("close");
+									$("#win-pos").text("添加学生")
+								}
+							});
+						}
+					});
+				});
+
+				//最小化按钮
+				$("#min").click(function() {
+					var p = $("#win-pos");
+					var offset = p.offset();
+
+					//最小化到某个位置一次
+					/* $("#win").window("minimizeTo", {
+						left: offset.left,
+						top: offset.top,
+						width: p.width(),
+						height: p.height(),
+						complete: function(t) {
+							//注意这个t，只是调用moveTo过程中的对象，不一定是window
+							$("#win").window("close");
+							$("#win-pos").text("添加学生")
+						}
+					}); */
+
+					//当options中指定了minimize函数后，也可直接调用最小化函数
+					$("#win").window("minimize");
+				});
+
+
+				//最大化按钮
+				$("#max").click(function() {
+					$("#win").window("maximize");
+				});
+
+				$("#restore").click(function() {
+					$("#win").window("restoreTo");
+				});
+			});
+		</script>
+	</head>
+	<body class="easyui-x" uix-on="true">
+		<div class="content">
+			<section class="floor1">
+				<a id="min" class="easyui-linkbutton">最小化</a>
+				<a id="max" class="easyui-linkbutton">最大化</a>
+				<a id="restore" class="easyui-linkbutton">还原</a>
+
+				<div id="win-pos"></div>
+				<!-- 选项中：inline值为true表示内联默认布局，为false表示默认在所有元素层之上 -->
+				<!-- border:thin表示窄边框 -->
+				<div id="win" title="添加学生" style="width: 600px;height:350px"
+					data-options="border:'thin',iconCls:'icon-ok'"></div>
+			</section>
+
+
+			<section>
+				<div class="box"></div>
+			</section>
+		</div>
+	</body>
+</html>

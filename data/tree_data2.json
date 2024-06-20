@@ -1,0 +1,177 @@
+[{
+		"children": [{
+				"children": [{
+						"children": [{ "id": 10, "text": "基础语法", "seq": 10, "description": "" },
+							{ "id": 11, "text": "面向对象基础", "seq": 20, "description": "" },
+							{ "id": 12, "text": "集合类", "seq": 30, "description": "" },
+							{ "id": 13, "text": "容器与泛型", "seq": 40, "description": "" },
+							{ "id": 14, "text": "异常处理机制", "seq": 50, "description": "" },
+							{ "id": 15, "text": "反射与句柄", "seq": 60, "description": "" },
+							{ "id": 16, "text": "IO流操作", "seq": 70, "description": "" },
+							{ "id": 59, "text": "多线程、并发", "seq": 80, "description": "" },
+							{ "id": 60, "text": "网络编程", "seq": 90, "description": "" },
+							{ "id": 61, "text": "Swing界面编程", "seq": 100, "description": "" },
+							{ "id": 64, "text": "内部类", "seq": 110, "description": "" }
+						],
+						"id": 5,
+						"text": "JavaSE",
+						"seq": 10,
+						"description": ""
+					},
+					{
+						"children": [{ "id": 67, "text": "Servlet", "seq": 10, "description": "" },
+							{ "id": 68, "text": "Filter", "seq": 20, "description": "" },
+							{ "id": 69, "text": "Listener", "seq": 30, "description": "" }
+						],
+						"id": 6,
+						"text": "JavaEE",
+						"seq": 20,
+						"description": ""
+					},
+					{
+						"children": [{ "id": 24, "text": "SpringMVC", "seq": 10, "description": "" },
+							{ "id": 25, "text": "Spring", "seq": 20, "description": "" },
+							{ "id": 26, "text": "MyBatis", "seq": 30, "description": "" },
+							{ "id": 27, "text": "SSM整合", "seq": 40, "description": "" }
+						],
+						"id": 7,
+						"text": "SSM",
+						"seq": 30,
+						"description": ""
+					},
+					{ "id": 8, "text": "SpringBoot", "seq": 40, "description": "" }, {
+						"children": [{
+								"children": [{
+										"children": [
+											{ "id": 19, "text": "Lambda表达方式", "seq": 10, "description": "" },
+											{ "id": 20, "text": "方法引用", "seq": 20, "description": "" },
+											{ "id": 21, "text": "函数式接口", "seq": 30, "description": "" },
+											{ "id": 22, "text": "默认方法与静态方法", "seq": 40, "description": "" },
+											{ "id": 23, "text": "Stream操作", "seq": 50, "description": "" }
+										],
+										"id": 18,
+										"text": "JDK8新特性",
+										"seq": 10,
+										"description": ""
+									},
+									{
+										"children": [
+											{ "id": 63, "text": "设计模式", "seq": 10, "description": "" }
+										],
+										"id": 62,
+										"text": "面向对象高级",
+										"seq": 20,
+										"description": ""
+									}
+								],
+								"id": 17,
+								"text": "版本特性",
+								"seq": 10,
+								"description": ""
+							},
+							{
+								"children": [{ "id": 73, "text": "Struts2", "seq": 10, "description": "" },
+									{ "id": 74, "text": "Hibernate", "seq": 20, "description": "" }
+								],
+								"id": 72,
+								"text": "框架",
+								"seq": 20,
+								"description": ""
+							}
+						],
+						"id": 9,
+						"text": "其它",
+						"seq": 50,
+						"description": ""
+					}
+				],
+				"id": 3,
+				"text": "Java",
+				"seq": 10,
+				"description": ""
+			},
+			{
+				"children": [{
+						"children": [{ "id": 30, "text": "HTML", "seq": 10, "description": "" },
+							{ "id": 31, "text": "CSS", "seq": 20, "description": "" }, {
+								"children": [
+									{ "id": 65, "text": "基础语法", "seq": 10, "description": "" },
+									{ "id": 66, "text": "高阶函数及闭包", "seq": 20, "description": "" }
+								],
+								"id": 32,
+								"text": "Javascript",
+								"seq": 30,
+								"description": ""
+							}
+						],
+						"id": 28,
+						"text": "前端三大件",
+						"seq": 10,
+						"description": ""
+					},
+					{ "id": 33, "text": "jQuery", "seq": 20, "description": "" },
+					{ "id": 34, "text": "HTML5", "seq": 30, "description": "" },
+					{ "id": 35, "text": "CSS3", "seq": 40, "description": "" },
+					{ "id": 36, "text": "ES6", "seq": 50, "description": "" },
+					{ "id": 37, "text": "响应式与移动端", "seq": 60, "description": "" },
+					{ "id": 38, "text": "Vue全家桶", "seq": 70, "description": "" },
+					{ "id": 39, "text": "React全家桶", "seq": 80, "description": "" }, {
+						"children": [
+							{ "id": 41, "text": "微信小程序", "seq": 10, "description": "" }
+						],
+						"id": 40,
+						"text": "其它",
+						"seq": 90,
+						"description": ""
+					}
+				],
+				"id": 4,
+				"text": "H5",
+				"seq": 20,
+				"description": ""
+			},
+			{ "id": 42, "text": "数据结构与算法", "seq": 30, "description": "" },
+			{ "id": 70, "text": "网络相关", "seq": 40, "description": "" },
+			{ "id": 71, "text": "Linux/Unix操作系统", "seq": 50, "description": "" }
+		],
+		"id": 1,
+		"text": "按知识点分类",
+		"seq": 10,
+		"description": ""
+	},
+	{
+		"children": [{ "id": 57, "text": "牛客网", "seq": 10, "description": "" },
+			{ "id": 58, "text": "历年企业真实笔试题", "seq": 20, "description": "" }
+		],
+		"id": 2,
+		"text": "按题目来源分类",
+		"seq": 20,
+		"description": ""
+	},
+	{
+		"children": [{ "id": 44, "text": "基础文化知识", "seq": 10, "description": "" },
+			{ "id": 45, "text": "逻辑思维与想象力", "seq": 20, "description": "" },
+			{ "id": 46, "text": "实战经验与动手能力", "seq": 30, "description": "" },
+			{ "id": 47, "text": "性格、习惯与综合素质", "seq": 40, "description": "" }, {
+				"children": [
+					{ "id": 49, "text": "抗压能力", "seq": 10, "description": "" },
+					{ "id": 50, "text": "团队合作能力", "seq": 20, "description": "" },
+					{ "id": 51, "text": "沟通交流能力", "seq": 30, "description": "" },
+					{ "id": 52, "text": "文案、文档编写能力", "seq": 40, "description": "" },
+					{ "id": 53, "text": "管理能力", "seq": 50, "description": "" },
+					{ "id": 54, "text": "分析、解决问题能力", "seq": 60, "description": "" },
+					{ "id": 55, "text": "领导、组织与策划能力", "seq": 70, "description": "" },
+					{ "id": 56, "text": "商务、洽谈能力", "seq": 80, "description": "" }
+				],
+				"id": 48,
+				"text": "职场素养",
+				"seq": 50,
+				"description": ""
+			}
+		],
+		"id": 43,
+		"text": "按考察目的分类",
+		"seq": 30,
+		"description": ""
+	}
+]

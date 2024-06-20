@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>032-选项卡</title>
+		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+		<link rel="stylesheet" href="../easyui/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+
+		<!-- 常用icon -->
+		<link rel="stylesheet" type="text/css" href="css/uix.icon.css" />
+
+		<script src="jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- uix增强美化 -->
+		<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- 动画库 -->
+		<script src="../velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.ui.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.content {
+				padding: 20px;
+				margin: 10px;
+				border: 1px dashed #ccc;
+				overflow: hidden;
+				width: 1800px;
+				transition: all .5s;
+			}
+		</style>
+		<script type="text/javascript">
+			//easyloader.locale = "zh_CN";
+			$(function() {
+				$("#btn1").click(function() {
+					$("#tabs1").velocity("headShake", {
+						duration: 300,
+						repeat: 1
+					});
+				});
+				$("#btn2").click(function() {
+					//stop结束动画，强制结束动画，保持当前状态
+					$("#tabs1").velocity("stop");
+					//finishl用于跳转到动画结束状态（无法中止无限循环动画）
+					//$("#tabs1").velocity("finish");
+				});
+
+				$("#btn3").click(function() {
+					$(".content").width(1000);
+					//此方法可以重适应大小，但无法随着transition而改变大小
+					// $("#tabs1").resize();
+				});
+			});
+		</script>
+	</head>
+	<body class="easyui-x" uix-on="true">
+		<div class="content">
+			<div style="margin-bottom: 10px;">
+				<a id="btn1" class="easyui-linkbutton"
+					data-options="iconCls:'icon-add',theme:['btn','bg-light-red']">动一动
+				</a>
+				<a id="btn2" class="easyui-linkbutton"
+					data-options="iconCls:'icon-edit',theme:['btn','bg-light-orange']">
+					停止
+				</a>
+				<a id="btn3" class="easyui-linkbutton"
+					data-options="iconCls:'icon-delete',theme:['btn','bg-green']">自适应</a>
+			</div>
+
+			<!-- 动态宽度tabs -->
+			<div id="tabs1" class="easyui-tabs" style="width:100%;height: 400px;" data-options="scrollDuration:400">
+				<div title="面板选项卡一" style="padding: 10px;">
+					<span>面板1</span>
+
+				</div>
+				<div title="面板选项卡二" style="padding: 10px;" data-options="closable:true,iconCls:'icon-ok'">
+					面板2
+				</div>
+				<div title="面板选项卡三" style="padding: 10px;" data-options="closable:true,iconCls:'icon-save'">
+					面板3
+				</div>
+				<div title="面板选项卡四" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板4
+				</div>
+				<div title="面板选项卡五" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板5
+				</div>
+				<div title="面板选项卡六" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板6
+				</div>
+				<div title="面板选项卡七" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板7
+				</div>
+				<div title="面板选项卡八" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板8
+				</div>
+				<div title="面板选项卡五" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板5
+				</div>
+				<div title="面板选项卡六" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板6
+				</div>
+				<div title="面板选项卡七" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板7
+				</div>
+				<div title="面板选项卡八" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板8
+				</div>
+				<div title="面板选项卡五" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板5
+				</div>
+				<div title="面板选项卡六" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板6
+				</div>
+				<div title="面板选项卡七" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板7
+				</div>
+				<div title="面板选项卡八" style="padding: 10px;" data-options="closable:true,iconCls:'icon-add'">
+					面板8
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

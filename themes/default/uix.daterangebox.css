@@ -1,0 +1,49 @@
+.datefrom-inline {
+	display: inline-block;
+	border-width: 0;
+	border-right-width: 1px;
+}
+
+.dateto-inline {
+	display: inline-block;
+	border-width: 0;
+}
+
+.drb-button {
+	border-top: 1px solid #ddd;
+	height: 46px;
+	padding: 10px 10px;
+	box-sizing: border-box;
+	text-align: right;
+	font-size: 0;
+}
+
+.drb-button>table {
+	display: inline-block;
+	font-size: 0;
+}
+
+.drb-button>table tr>td:hover {
+	background-color: #e1e1e1;
+}
+
+.drb-button .drb-button-a {
+	display: inline-block;
+	box-sizing: border-box;
+	font-weight: normal;
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #c9c9c9;
+	padding: 0 10px;
+	color: #666;
+	text-align: center;
+}
+
+.drb-button .drb-button-a:hover {
+	background-color: #5fb878;
+	color: #fff;
+}
+
+.drb-button .drb-button-a:not(:first-child) {
+	border-left-width: 0;
+}

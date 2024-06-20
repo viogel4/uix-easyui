@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>030-面板</title>
+		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.icon.css" />
+
+		<script src="jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../easyui/easyloader.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- uix增强美化 -->
+		<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- 动画库 -->
+		<script src="../velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.ui.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.content {
+				padding: 20px;
+				margin: 10px;
+				border: 1px dashed #ccc;
+				overflow: hidden;
+			}
+		</style>
+		<script type="text/javascript">
+			easyloader.locale = "zh_CN";
+
+			// 注意：velocity.ui.min.js中好多效果不能用，但凡函数带3d的都不能用，如
+			//translate3d、rotate3d等，但更换成translateX函数或translateY函数就好了
+			$(function() {
+				$("#shakeItBaby").click(function() {
+					$("#p3").panel("panel").velocity("headShake", {
+						duration: 300,
+						repeat: true
+					});
+				});
+
+				$("#stopItBaby").click(function() {
+					$(this).toggleClass("pause");
+
+					if ($(this).hasClass("pause")) {
+						//暂停动画
+						$("#p3").panel("panel").velocity("pause");
+						$(this).linkbutton("setText", "继续");
+					} else {
+						//继续动画
+						$("#p3").panel("panel").velocity("resume");
+						$(this).linkbutton("setText", "暂停");
+					}
+				});
+
+				$("#openIt").click(function() {
+					$("#p4").panel("open");
+				});
+
+				$("#closeIt").click(function() {
+					$("#p4").panel("close");
+				});
+
+				$("#expand").click(function() {
+					//第2个参数true表示带动画，支持第3个参数（json对象），用于指定duration
+					//若不指定，默认为"fast"
+					$("#p4").panel("expand", true, {
+						duration: 200
+					});
+				});
+
+				$("#collapse").click(function() {
+					//第2个参数true表示带动画
+					$("#p4").panel("collapse", true, {
+						duration: 200
+					});
+				});
+			});
+		</script>
+	</head>
+	<body class="easyui-x" uix-on="true">
+		<div class="content">
+			<!-- 没有title属性，则默认没有header -->
+			<div id="p1" class="easyui-panel" style="width:700px;height:200px;padding:10px;">
+				未指定title属性，则默认没有header，内间距10px
+			</div>
+			<br>
+
+			<div id="p2" class="easyui-panel" title="Basic Panel(默认样式)" style="width:700px;height:200px;padding:10px;">
+				默认面板美化样式，内间距10px，未设置皮肤
+			</div>
+			<br>
+			<div style="margin-bottom: 10px;">
+				<a id="shakeItBaby" class="easyui-linkbutton" href="javascript:void(0)">动起来</a>
+				<a id="stopItBaby" class="easyui-linkbutton" data-options="theme:['btn','bg-red']"
+					href="javascript:void(0)">暂停</a>
+			</div>
+			<div id="p3" class="easyui-panel" title="Basic Panel(红色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-red'],subTitle:'这是一个副标题'">
+				默认面板美化样式，内间距10px，设置红色背景，这个颜色太刺眼了。设置副标题。
+			</div>
+
+			<div style="margin: 10px;">
+				<a id="openIt" class="easyui-linkbutton" href="javascript:void(0)">打开</a>
+				<a id="closeIt" class="easyui-linkbutton" href="javascript:void(0)">关闭</a>
+				<a id="expand" class="easyui-linkbutton" href="javascript:void(0)">展开</a>
+				<a id="collapse" class="easyui-linkbutton" href="javascript:void(0)">收缩</a>
+			</div>
+
+			<div id="p4" class="easyui-panel" title="Basic Panel(橘色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-orange'],subTitle:'这是一个副标题',subTitlePos:'right',
+				collapsible:true,
+				openAnimation:'slide',openDuration:200,
+				closeAnimation:'slide',closeDuration:200">
+				默认面板美化样式，内间距10px，设置副标题及副标题位置
+			</div>
+			<br>
+
+			<div id="p5" class="easyui-panel" title="Basic Panel(黄色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-yellow']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p6" class="easyui-panel" title="Basic Panel(橄榄色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-olive']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p7" class="easyui-panel" title="Basic Panel(绿色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-green']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p8" class="easyui-panel" title="Basic Panel(青色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-teal']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p9" class="easyui-panel" title="Basic Panel(蓝色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-blue']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p10" class="easyui-panel" title="Basic Panel(深蓝色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-darkblue']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p11" class="easyui-panel" title="Basic Panel(紫罗兰色背景)"
+				style="width:700px;height:200px;padding:10px;" data-options="theme:['bg','bg-violet']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p12" class="easyui-panel" title="Basic Panel(紫色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-purple']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p13" class="easyui-panel" title="Basic Panel(粉色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-pink']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p14" class="easyui-panel" title="Basic Panel(棕色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-brown']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p15" class="easyui-panel" title="Basic Panel(浅灰色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-grayish']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p15" class="easyui-panel" title="Basic Panel(灰色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-grey']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div id="p16" class="easyui-panel" title="Basic Panel(黑色背景)" style="width:700px;height:200px;padding:10px;"
+				data-options="theme:['bg','bg-black']">
+				默认面板美化样式，内间距10px
+			</div>
+			<br>
+
+			<div class="easyui-panel" title="Panel Footer(带页脚的面板)" style="width:700px;height:200px; "
+				data-options="footer:'#ft'">
+			</div>
+			<div id="ft" style="padding:10px;">
+				Footer Content.
+			</div>
+			<br>
+
+			<div class="easyui-panel" title="Custom Panel Tools" style="width:700px;height:200px;padding:10px;"
+				data-options="iconCls:'icon-save',closable:true,tools:'#tt',theme:['bg','bg-orange']">
+
+			</div>
+			<div id="tt">
+				<a href="javascript:void(0)" class="icon-add" onclick="javascript:alert('add')"></a>
+				<a href="javascript:void(0)" class="icon-edit" onclick="javascript:alert('edit')"></a>
+				<a href="javascript:void(0)" class="icon-cut" onclick="javascript:alert('cut')"></a>
+				<a href="javascript:void(0)" class="icon-help" onclick="javascript:alert('help')"></a>
+			</div>
+
+			<br>
+			<div class="easyui-panel" title="Nested Panel" style="width:700px;height:200px;padding:10px;"
+				data-options="cls:'theme-panel-red'">
+				<div class="easyui-layout" data-options="fit:true">
+					<div data-options="region:'west',split:true" style="width:100px;padding:10px">
+						Left Content
+					</div>
+					<div data-options="region:'east'" style="width:100px;padding:10px">
+						Right Content
+					</div>
+					<div data-options="region:'center'" style="padding:10px">
+						Center Content
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
