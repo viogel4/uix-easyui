@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>061-特殊窗口</title>
+		<link rel="stylesheet" href="../easyui/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+		<!-- 常用icon -->
+		<link rel="stylesheet" type="text/css" href="css/uix.icon.css" />
+
+		<script src="jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="../easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.content {
+				padding: 20px;
+				margin: 10px;
+				border: 1px dashed #ccc;
+				overflow: hidden;
+				box-sizing: border-box;
+				width: calc(100% - 20px);
+				transition: all 0.5s;
+			}
+
+			.floor1>* {
+				vertical-align: middle;
+			}
+		</style>
+		<script type="text/javascript">
+			//easyloader.locale = "zh_CN";
+
+			// 注意：velocity.ui.min.js中好多效果不能用，但凡函数带3d的都不能用，如
+			//translate3d、rotate3d等，但更换成translateX函数或translateY函数就好了
+			$(function() {
+				$("#newDialog").click(function() {
+					$("#dlg").dialog({
+						modal: true,
+						minimizable: true,
+						buttons: [{
+							text: "确定",
+							handler: function() {
+								//在window.js中覆盖了onBeforeDestroy，删除mask和shadow，
+								//而如果指定第二个参数，则略过onBeforeDestroy，算是一个bug
+								$("#dlg").dialog("destroy");
+							}
+						}, {
+							text: "取消"
+						}],
+						onBeforeOpen:function(){
+							console.log("aaa");
+						}
+					});
+					
+					//打开窗口
+					$("#dlg").dialog("open");
+				});
+
+				$("#newBtn").click(function() {
+					$("#tbl").datagrid("appendRow", {
+						id: "01",
+						content: "java",
+						isAnswer: true
+					});
+
+					using("switchbutton", function() {
+						var panel = $("#tbl").datagrid("getPanel");
+						panel.find("[field=isAnswer] .sbtn:last").switchbutton();
+					});
+				});
+
+				$("#delBtn").click(function() {
+					var row = $("#tbl").datagrid("getSelected");
+					var idx = $("#tbl").datagrid("getRowIndex", row);
+					$("#tbl").datagrid("deleteRow", idx);
+				});
+
+				$("#tbl").datagrid({
+					columns: [
+						[{
+								field: 'ck',
+								checkbox: true
+							},
+							{
+								field: 'id',
+								title: '编号',
+								width: 80,
+								fixed: true,
+								resizable: false
+							}, {
+								field: 'content',
+								title: '内容',
+								width: 200
+							}, {
+								field: 'isAnswer',
+								title: '是否答案',
+								width: 120,
+								fixed: true,
+								resizable: false,
+								formatter: function(value) {
+									if (value) {
+										return "<input class='sbtn' checked='checked' />"
+									} else {
+										return "<input class='sbtn' />"
+									}
+								}
+							}
+						]
+					],
+					onBeforeOpen: function() {
+						var me = this;
+						$(me).find("[field=isAnswer] .sbtn").switchbutton();
+					}
+				});
+			});
+		</script>
+	</head>
+	<body class="easyui-x" uix-on="true">
+		<div class="content">
+			<section class="floor1">
+				<a id="newDialog" class="easyui-linkbutton">打开窗口</a>
+				<a id="min" class="easyui-linkbutton">最小化</a>
+				<input type="checkbox" class="easyui-switchbutton" checked="checked" />
+
+				<div id="dlg" class="easyui-dialog" data-options="closed:true" title="选项及答案"
+					style="width: 600px;height:450px;padding:5px;" data-options="border:'thin',iconCls:'icon-ok'">
+					<table id="tbl" class="easyui-datagrid"
+						data-options="fit:true,rownumbers:true,fitColumns:true,toolbar:'#toolbar',singleSelect:true">
+					</table>
+					<div id="toolbar">
+						<a id="newBtn" class="easyui-linkbutton">新增</a>
+						<a id="delBtn" class="easyui-linkbutton">删除</a>
+					</div>
+				</div>
+
+			</section>
+		</div>
+	</body>
+</html>

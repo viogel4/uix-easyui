@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>007-进度条颜色</title>
+
+	<link rel="stylesheet" href="./include/jquery-easyui-1.11.1/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+	<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+
+	<script src="./jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./include/jquery-easyui-1.11.1/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./include/velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./include/velocity2/velocity.ui.js" type="text/javascript" charset="utf-8"></script>
+
+	<style type="text/css">
+		.content {
+			padding: 20px;
+			margin: 10px;
+			border: 1px dashed #ccc;
+			overflow: hidden;
+		}
+
+		.content a {
+			margin: 5px;
+		}
+
+		.content p {
+			margin: 5px 0px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function () {
+			$("#btn").click(function () {
+				$(this).velocity("headShake", {
+					duration: 300,
+					repeat: 3
+				});
+
+				$(".easyui-progressbar:lt(5)").velocity("headShake", {
+					duration: 300,
+					repeat: 3
+				});
+			});
+		});
+	</script>
+</head>
+
+<body class="easyui-x" uix-on="true">
+	<div class="content">
+		<a id="btn" class="easyui-linkbutton btn bg-red">测试进度条动画</a>
+
+		<h3 style="margin: 20px 0;">进度条颜色，无动画</h3>
+		<p style="margin: 10px 0;">调用方法：class="easyui-progressbar"
+			data-options="theme:['bg','bg-red'],animation:false"</p>
+
+		<p>progressbar-red</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-red','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<p>progressbar-orange</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-orange','font-white'],animation:false"
+			style="width:50%;">
+		</div>
+
+		<p>progressbar-yellow</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-yellow','font-white'],animation:false"
+			style="width:50%;">
+		</div>
+
+		<p>.progressbar-olive</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-olive','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<p>.progressbar-green</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-green','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<p>.progressbar-teal</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-teal','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<p>.progressbar-blue</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-blue','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<p>.progressbar-darkblue</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-darkblue','font-white'],animation:false"
+			style="width:50%;">
+		</div>
+
+		<p>.progressbar-violet</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-violet','font-white'],animation:false"
+			style="width:50%;">
+		</div>
+
+		<p>.progressbar-purple</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-purple','font-white'],animation:false"
+			style="width:50%;">
+		</div>
+
+		<p>.progressbar-pink</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-pink','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<p>.progressbar-brown</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-brown','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<p>.progressbar-grey</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-grey','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<p>.progressbar-black</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-black','font-white'],animation:false"
+			style="width:50%;"></div>
+
+		<h3 style="margin: 20px 0;">进度条动画颜色，默认即带动画</h3>
+		<p style="margin: 10px 0;">调用方法： class="easyui-progressbar" data-options="theme:['bg-red']"</p>
+
+		<p>.progressbar-red</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-red','font-white']" style="width:50%;">
+		</div>
+
+		<p>.progressbar-orange</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-orange','font-white']"
+			style="width:50%;"></div>
+
+		<p>.progressbar-yellow</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-yellow','font-white']"
+			style="width:50%;"></div>
+
+		<p>.progressbar-olive</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-olive','font-white']"
+			style="width:50%;"></div>
+
+		<p>.progressbar-green</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-green','font-white']"
+			style="width:50%;"></div>
+
+		<p>.progressbar-teal</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-teal','font-white']" style="width:50%;">
+		</div>
+
+		<p>.progressbar-blue</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-blue','font-white']" style="width:50%;">
+		</div>
+
+		<p>.progressbar-darkblue</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-darkblue','font-white']"
+			style="width:50%;">
+		</div>
+
+		<p>.progressbar-violet</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-violet','font-white']"
+			style="width:50%;"></div>
+
+		<p>.progressbar-purple</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-purple','font-white']"
+			style="width:50%;"></div>
+
+		<p>.progressbar-pink</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-pink','font-white']" style="width:50%;">
+		</div>
+
+		<p>.progressbar-brown</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-brown','font-white']"
+			style="width:50%;"></div>
+
+		<p>.progressbar-grey</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-grey','font-white']" style="width:50%;">
+		</div>
+
+		<p>.progressbar-black</p>
+		<div class="easyui-progressbar" data-options="value:80, theme:['bg','bg-black','font-white']"
+			style="width:50%;"></div>
+
+		<!-- 可自定义高度20 -->
+		<h3 style="margin: 20px 0;">无美化，默认进度条</h3>
+		<div class="easyui-progressbar" data-options="value:80, animation:false,height:20" style="width:50%;"></div>
+
+		<h3 style="margin: 20px 0;">开启美化，但未设置进度条样式，默认带动画</h3>
+		<div class="easyui-progressbar" data-options="value:80,height:20" style="width:50%;"></div>
+	</div>
+</body>
+
+</html>

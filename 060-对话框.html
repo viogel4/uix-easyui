@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>060-对话框组件</title>
+		<link rel="stylesheet" href="../easyui/themes/default/easyui.css">
+		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+		<!-- 常用icon -->
+		<link rel="stylesheet" type="text/css" href="css/uix.icon.css" />
+
+		<script src="jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="../easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.content {
+				padding: 20px;
+				margin: 10px;
+				border: 1px dashed #ccc;
+				overflow: hidden;
+				box-sizing: border-box;
+				width: calc(100% - 20px);
+				transition: all 0.5s;
+			}
+
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: pink;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+
+			#win-pos {
+				display: inline-block;
+				width: 80px;
+				height: 30px;
+				box-sizing: border-box;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 30px;
+			}
+
+			.floor1>* {
+				vertical-align: middle;
+			}
+		</style>
+		<script type="text/javascript">
+			//easyloader.locale = "zh_CN";
+
+			// 注意：velocity.ui.min.js中好多效果不能用，但凡函数带3d的都不能用，如
+			//translate3d、rotate3d等，但更换成translateX函数或translateY函数就好了
+			$(function() {
+				$("#dlg").dialog({
+					minimizable: true,
+					buttons: [{
+						text: "确定"
+					}, {
+						text: "取消"
+					}],
+					minimize: function(jq) {
+						var p = $("#win-pos");
+						var offset = p.offset();
+
+						jq.dialog("moveTo", {
+							left: offset.left,
+							top: offset.top,
+							width: p.width(),
+							height: p.height(),
+							opacity: 0,
+							complete: function(t) {
+								t.dialog("close");
+								$("#win-pos").text("添加学生")
+							}
+						});
+					},
+					onBeforeClose: function() {
+						var me = this;
+						using("messager", function() {
+							$.messager.confirm("确认", "是否确认关闭？", function(r) {
+								if (r) {
+									$(me).dialog("close", true);
+								}
+							});
+						});
+						return false;
+					}
+				});
+
+				//最小化按钮
+				$("#min").click(function() {
+					var p = $("#win-pos");
+					var offset = p.offset();
+					//当options中指定了minimize函数后，也可直接调用最小化函数
+					$("#dlg").dialog("minimize");
+				});
+
+				//还原按钮
+				$("#restore").click(function() {
+					var pos = $("#win-pos");
+					var offset = pos.offset();
+					$("#dlg").dialog("restoreTo", {
+						opacity: 1,
+						current: {
+							left: offset.left,
+							top: offset.top,
+							width: pos.width(),
+							height: pos.height()
+						}
+					});
+				});
+
+				$("#max").click(function() {
+
+				});
+
+				$("#msg").click(function() {
+					using("messager", function() {
+						$.messager.msg("新增题目类别失败，请稍候再试");
+					});
+				});
+			});
+		</script>
+	</head>
+	<body class="easyui-x" uix-on="true">
+		<div class="content">
+			<section class="floor1">
+				<a id="min" class="easyui-linkbutton">最小化</a>
+				<a id="max" class="easyui-linkbutton">最大化</a>
+				<a id="restore" class="easyui-linkbutton">还原</a>
+				<a id="msg" class="easyui-linkbutton">无扰提示框</a>
+
+				<div id="win-pos"></div>
+				<!-- 选项中：inline值为true表示内联默认而已，为false表示默认在所有元素层之上 -->
+				<!-- border:thin表示窄边框 -->
+				<div id="dlg" title="添加学生" style="width: 600px;height:350px"
+					data-options="border:'thin',iconCls:'icon-ok'">
+					<input class="easyui-textbox" label="姓名：" data-options="width:'300px'" />
+				</div>
+
+			</section>
+
+
+			<section>
+				<div class="box"></div>
+			</section>
+		</div>
+	</body>
+</html>

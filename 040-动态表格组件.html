@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>040-动态表格组件</title>
+		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css" />
+
+		<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+		<!-- 常用icon -->
+		<link rel="stylesheet" type="text/css" href="css/uix.icon.css" />
+		<link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css" />
+
+		<script src="jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../easyui/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../easyui/locale/easyui-lang-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="../easyui/easyloader.js" type="text/javascript" charset="utf-8"></script> -->
+		<script type="text/javascript">
+			/* easyloader.locale = "zh_CN"; */
+		</script>
+
+		<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../velocity2/velocity.ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.content {
+				padding: 20px;
+				margin: 10px;
+				border: 1px dashed #ccc;
+				overflow: hidden;
+				transition: all 0.5s;
+				width: calc(100% - 20px);
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+			}
+		</style>
+		<script type="text/javascript">
+			// 注意：velocity.ui.min.js中好多效果不能用，但凡函数带3d的都不能用，如
+			//translate3d、rotate3d等，但更换成translateX函数或translateY函数就好了
+			$(function() {
+				/* $("#tbl3").propertygrid({
+					width: 400,
+					height: 300,
+					data: {
+						total: 10,
+						rows: [{
+							name: "参数",
+							value: "111"
+						}]
+					}
+				}); */
+
+				$("#tbl1").datagrid({
+					paginationInfoLeft: true
+				});
+
+				$("#tbl2").datagrid({
+					paginationInfoLeft: true
+				});
+
+
+			});
+		</script>
+	</head>
+	<body class="easyui-x" uix-on="true">
+		<div class="content">
+			<!-- 给表格设置内联样式width:100%，或设置属性fit:true，都会使用datagrid变成easyui-fluid状态 -->
+			<!-- 但fit:true会使宽度和高度都变化，使行内样式height失效 -->
+			<table id="tbl1" class="easyui-datagrid" title="数据表格组合工具栏" style="width:800px;height:450px" data-options="rownumbers:true,singleSelect:true,url:'./data/datagrid_data1.json',method:'get',toolbar:'#tb',footer:'#ft',pagination:true,
+							pageSize:10">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">Item ID</th>
+						<th data-options="field:'productid',width:100">Product</th>
+						<th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+						<th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+						<th data-options="field:'attr1',width:240">Attribute</th>
+						<th data-options="field:'status',width:60,align:'center'">Status</th>
+					</tr>
+				</thead>
+			</table>
+			<div id="tb">
+				<input class="easyui-datebox" label="出生日期从:" labelPosition="left" style="width:220px">
+				<input class="easyui-datebox" label="至:" labelPosition="left" style="width:180px">
+				<!-- labelPosition默认居左 -->
+				<select class="easyui-combobox" label="语言:" panelHeight="auto" style="width:180px">
+					<option value="java">Java</option>
+					<option value="c">C</option>
+					<option value="basic">Basic</option>
+					<option value="perl">Perl</option>
+					<option value="python">Python</option>
+				</select>
+				<a href="#" class="easyui-linkbutton" data-options="theme:['btn','bg-light-blue']"
+					iconCls="icon-search">搜索</a>
+			</div>
+			<div id="ft" style="padding:2px 5px;">
+				<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加</a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true">编辑</a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true">保存</a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true">剪切</a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-delete" plain="true">删除</a>
+			</div>
+			<br>
+
+			<!-- 第二个表格 -->
+			<table id="tbl2" class="easyui-datagrid" title="数据表格组合工具栏" style="width:800px;height:450px" data-options="rownumbers:true,singleSelect:true,url:'./data/datagrid_data1.json',method:'get',toolbar:'#tb1',footer:'#ft1',pagination:true,
+							pageSize:10">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">Item ID</th>
+						<th data-options="field:'productid',width:100">Product</th>
+						<th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+						<th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+						<th data-options="field:'attr1',width:240">Attribute</th>
+						<th data-options="field:'status',width:60,align:'center'">Status</th>
+					</tr>
+				</thead>
+			</table>
+			<div id="tb1">
+				<input class="easyui-searchbox" data-options="prompt:'请输入关键字',menu:'#mm1111',searcher:doSearch"
+					style="width:300px"></input>
+				<input type="text" class="easyui-datetimebox" style="width:200px;"></input>
+			</div>
+			<div id="ft1" style="padding:2px 5px;">
+				<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"></a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true"></a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true"></a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true"></a>
+				<a href="#" class="easyui-linkbutton" iconCls="icon-delete" plain="true"></a>
+			</div>
+			<div id="mm1111">
+				<div data-options="name:'all',iconCls:'icon-ok'">所有新闻</div>
+				<div data-options="name:'sports'">体育新闻</div>
+			</div>
+			<script>
+				function doSearch(value, name) {
+					alert('You input: ' + value + '(' + name + ')');
+				}
+			</script>
+
+
+			<br>
+			<table id="tbl3">
+
+			</table>
+		</div>
+	</body>
+</html>

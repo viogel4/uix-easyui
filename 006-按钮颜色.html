@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>006-按钮颜色</title>
+	<!-- 基础样式 -->
+	<link rel="stylesheet" href="./include/jquery-easyui-1.11.1/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+	<link rel="stylesheet" href="css/uix.basic.css">
+	<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+
+	<script src="jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- easyui：使用easyuiloader，可以动态加载插件及主题样式 -->
+	<script src="./include/jquery-easyui-1.11.1/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./include/velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./include/velocity2/velocity.ui.js" type="text/javascript" charset="utf-8"></script>
+
+	<style type="text/css">
+		.content {
+			padding: 20px;
+			margin: 10px;
+			border: 1px dashed #ccc;
+			overflow: hidden;
+		}
+
+		.content a {
+			margin-bottom: 15px;
+		}
+	</style>
+	<script type="text/javascript">
+		//注意：本文件使用的是easyloader，故css样式是异步加载导入的，无法提前提升优先级以覆盖默认easyui样式
+		//测试场景1：不引入basic.css，但添加easyui-x，此时easyui样式被修正为白色加大扁平按钮
+		//测试场景2：不引入basic.css，亦无easyui-x，此时easyui显示为默认皮肤样式按钮
+		//测试场景3：引入basic.css，但禁用uix-on=true，此时easyui样式被修正为白色加大扁平按钮
+		//测试场景4：引入basic.css，启用easyui-x和uix-on=ture，显示为美化后的不同颜色按钮
+		//测试场景5：引入basic.css，启用uix-on=ture，但禁用easui-x，则显示为未修正的不同颜色按钮
+
+		$(function () {
+			$(".content:eq(1)>.btn:first").click(function () {
+				$(this).next().velocity("headShake", {
+					duration: 300
+				});
+			});
+		});
+	</script>
+</head>
+
+<body class="easyui-x" uix-on="true">
+	<div class="content">
+		<h3 style="margin-bottom: 20px;">普通链接按钮</h3>
+
+		<!-- 小按钮 -->
+		<div>
+			<a class="btn btn-small bg-red">红色</a>
+			<a class="btn btn-small bg-orange">桔色</a>
+			<a class="btn btn-small bg-yellow">黄色</a>
+			<a class="btn btn-small bg-olive">橄榄色</a>
+			<a class="btn btn-small bg-green">绿色</a>
+			<a class="btn btn-small bg-teal">青色</a>
+			<a class="btn btn-small bg-blue">蓝色</a>
+			<a class="btn btn-small bg-darkblue">深蓝色</a>
+			<a class="btn btn-small bg-violet">紫罗兰色</a>
+			<a class="btn btn-small bg-purple">紫色</a>
+			<a class="btn btn-small bg-pink">粉色</a>
+			<a class="btn btn-small bg-brown">棕色</a>
+			<a class="btn btn-small bg-grayish">浅灰色</a>
+			<a class="btn btn-small bg-grey">灰色</a>
+			<a class="btn btn-small bg-black">黑色</a>
+			<a class="btn btn-small bg-white">白色</a>
+		</div>
+
+		<!-- 普通按钮 -->
+		<div>
+			<a class="btn bg-red">红色</a>
+			<a class="btn bg-orange">桔色</a>
+			<a class="btn bg-yellow">黄色</a>
+			<a class="btn bg-olive">橄榄色</a>
+			<a class="btn bg-green">绿色</a>
+			<a class="btn bg-teal">青色</a>
+			<a class="btn bg-blue">蓝色</a>
+			<a class="btn bg-darkblue">深蓝色</a>
+			<a class="btn bg-violet">紫罗色</a>
+			<a class="btn bg-purple">紫色</a>
+			<a class="btn bg-pink">粉色</a>
+			<a class="btn bg-brown">棕色</a>
+			<a class="btn bg-grayish">浅灰色</a>
+			<a class="btn bg-grey">灰色</a>
+			<a class="btn bg-black">黑色</a>
+			<a class="btn bg-white">白色</a>
+		</div>
+	</div>
+
+	<div class="content">
+		<h3 style="margin-bottom: 20px;">easyui-linkbutton 背景颜色按钮</h3>
+		<!-- 方法1：直接添加样式 -->
+		<a class="easyui-linkbutton btn bg-red" data-options="size:'tiny'">red 红色</a>
+		<a class="easyui-linkbutton btn bg-orange" data-options="size:'tiny'">orange 橘色</a>
+		<a class="easyui-linkbutton btn bg-yellow" data-options="size:'tiny'">yellow 黄色</a>
+		<a class="easyui-linkbutton btn bg-olive" data-options="size:'tiny'">olive 橄榄色</a>
+		<a class="easyui-linkbutton btn bg-green">green 绿色</a>
+		<a class="easyui-linkbutton btn bg-teal">teal 青色</a>
+		<a class="easyui-linkbutton btn bg-blue">blue 蓝色</a>
+		<a class="easyui-linkbutton btn bg-darkblue">darkblue 深蓝色</a>
+
+		<!-- 方法2：使用theme属性，添加class，使用theme属性时，无须添加btn样式，theme支持添加多个样式 -->
+		<!-- 如果想控制linkbutton的大小，可以通过width和height自由定义大小 -->
+		<!-- 也可以通过size属性定义，size属性接受：small和large，默认值即small -->
+		<a class="easyui-linkbutton" data-options="theme:['btn','bg-violet']">violet 紫罗兰色</a>
+		<a class="easyui-linkbutton" data-options="theme:['btn','bg-purple']">purple 紫色</a>
+		<a class="easyui-linkbutton" data-options="theme:['btn','bg-pink']">pink 粉色</a>
+		<a class="easyui-linkbutton" data-options="theme:['btn','bg-brown']">brown 棕色</a>
+		<a class="easyui-linkbutton" data-options="theme:['btn','bg-grayish']">grayish 浅灰色</a>
+		<a class="easyui-linkbutton" data-options="theme:['btn','bg-grey']">grey 灰色</a>
+		<a class="easyui-linkbutton btn bg-black">black 黑色</a>
+		<a class="easyui-linkbutton btn bg-white">white 白色</a>
+		<a class="easyui-linkbutton">默认样式</a>
+	</div>
+
+	<div class="content">
+		<h3 style="margin-bottom: 20px;">浅背景颜色按钮</h3>
+		<a class="easyui-linkbutton btn bg-light-red">red 轻红色</a>
+		<a class="easyui-linkbutton btn bg-light-orange">orange 轻橘色</a>
+		<a class="easyui-linkbutton btn bg-light-yellow">yellow 轻黄色</a>
+		<a class="easyui-linkbutton btn bg-light-olive">olive 轻橄榄色</a>
+		<a class="easyui-linkbutton btn bg-light-green">green 轻绿色</a>
+		<a class="easyui-linkbutton btn bg-light-teal">teal 轻青色</a>
+		<a class="easyui-linkbutton btn bg-light-blue">blue 轻蓝色</a>
+		<a class="easyui-linkbutton btn bg-light-darkblue">darkblue 轻深蓝色</a>
+		<a class="easyui-linkbutton btn bg-light-violet">violet 轻紫罗兰色</a>
+		<a class="easyui-linkbutton btn bg-light-purple">purple 轻紫色</a>
+		<a class="easyui-linkbutton btn bg-light-pink">pink 轻粉色</a>
+		<a class="easyui-linkbutton btn bg-light-brown">brown 轻棕色</a>
+		<a class="easyui-linkbutton btn bg-light-grayish">grayish 轻浅灰色</a>
+		<a class="easyui-linkbutton btn bg-light-grey">grey 轻灰色</a>
+		<a class="easyui-linkbutton btn bg-light-black">black 轻黑色</a>
+		<a class="easyui-linkbutton btn bg-white">white 轻白色</a>
+		<a class="easyui-linkbutton">默认样式</a>
+	</div>
+
+	<!-- 按钮加载 -->
+	<div class="content">
+		<h3 style="margin-bottom: 20px;">加载中按钮</h3>
+		<a class="easyui-linkbutton btn bg-red"><i class="btn-loading"></i>加载中...</a>
+		<a class="easyui-linkbutton btn bg-orange"><i class="btn-loading"></i>loading...</a>
+		<a class="easyui-linkbutton btn bg-yellow"><i class="btn-loading"></i>正在载入</a>
+		<a class="easyui-linkbutton btn bg-olive"><i class="btn-loading"></i>载入中...</a>
+		<a class="easyui-linkbutton btn bg-green"><i class="btn-loading"></i>请稍候...</a>
+		<a class="easyui-linkbutton btn bg-teal"><i class="btn-loading"></i>青色</a>
+		<a class="easyui-linkbutton btn bg-blue"><i class="btn-loading"></i>蓝色</a>
+		<a class="easyui-linkbutton btn bg-darkblue"><i class="btn-loading"></i>深蓝色</a>
+		<a class="easyui-linkbutton btn bg-violet"><i class="btn-loading"></i>紫罗兰色</a>
+		<a class="easyui-linkbutton btn bg-purple"><i class="btn-loading"></i>紫色</a>
+		<a class="easyui-linkbutton btn bg-pink"><i class="btn-loading"></i>粉色</a>
+		<a class="easyui-linkbutton btn bg-brown"><i class="btn-loading"></i>棕色</a>
+		<a class="easyui-linkbutton btn bg-grayish"><i class="btn-loading"></i>浅灰色</a>
+		<a class="easyui-linkbutton btn bg-grey"><i class="btn-loading"></i>灰色</a>
+		<a class="easyui-linkbutton btn bg-black"><i class="btn-loading"></i>黑色</a>
+		<a class="easyui-linkbutton btn bg-white"><i class="btn-loading"></i>白色</a>
+	</div>
+</body>
+
+</html>

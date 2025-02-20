@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>012-自定义表单元素下拉富文本编辑器</title>
+		<link rel="stylesheet" href="./include/jquery-easyui-1.11.1/themes/default/easyui.css">
+
+		<!-- uix相关css -->
+		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+		<link rel="stylesheet" type="text/css" href="./include/iconfont/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+
+		<link rel="stylesheet" href="vditor-3.18.7/dist/index.css">
+
+		<link rel="stylesheet" type="text/css" href="themes/default/uix.daterangebox.css" />
+
+		<script src="jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- 加载全部组件 -->
+		<script src="./include/jquery-easyui-1.11.1/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="vditor-3.18.7/dist/index.min.js"></script>
+
+		<!-- 自定义插件 -->
+		<script src="plugins/uix.daterangebox.js" type="text/javascript" charset="utf-8"></script>
+		<script src="plugins/uix.comboricheditor.js" type="text/javascript" charset="utf-8"></script>
+
+		<!-- 本地化 -->
+		<script src="uix.easyui-lang-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+		<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./include/velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./include/velocity2/velocity.ui.js" type="text/javascript" charset="utf-8"></script>
+
+		<style type="text/css">
+			.content {
+				padding: 20px;
+				margin: 10px;
+				border: 1px dashed #ccc;
+				overflow: hidden;
+			}
+
+			.content>div {
+				margin: 10px 0;
+			}
+
+			.content .label-top {
+				margin: 0 0 10px;
+				display: block;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				/* let content = new Vditor("content", {
+					height: "100%",
+					preview: {
+						hljs: {
+							lineNumber: true
+						}
+					},
+					cache: {
+						enable: false
+					},
+					value: "初始内容",
+					after: function() {
+						//console.log("dfdfdfdfdfdf");
+						//console.log(content.getValue());
+					},
+					cdn: "vditor-3.18.7"
+				}); */
+
+				//console.log(content.getValue());
+
+				$("#btn").click(function() {
+					console.log(content.getValue());
+				});
+			});
+		</script>
+	</head>
+	<body class="easyui-x" uix-on="true" data-uix-domain="on">
+		<div class="content">
+			<h3 style="margin-bottom:20px;">自定义表单下拉富文本编辑器</h3>
+			<!-- 面板 -->
+			<div class="easyui-panel" title="注册面板" style="width:100%;max-width:600px;padding:30px 60px;">
+
+				<div style="margin-bottom:20px">
+					<label class="label-top">文本框（邮箱验证）:</label>
+					<input class="easyui-textbox" data-options="prompt:'请输入邮箱地址...',validType:'email'"
+						style="width:100%;">
+				</div>
+
+
+
+				<div style="margin-bottom:20px">
+					<label class="label-top" style="width:100%; display:block;">静态富文本编辑器:</label>
+					<div id="content"></div>
+				</div>
+
+
+				<!-- 自定义combo，下拉富文本编辑器 -->
+				<div style="margin-bottom:20px">
+					<label class="label-top" style="width:100%; display:block;">下拉富文本编辑器:</label>
+					<input class="easyui-comboricheditor" 
+					data-options="width:'100%',vditorOpts:{cdn:'./vditor-3.18.7',placeholder:'这是占位内容'}">
+				</div>
+
+				<div>
+					<a id="btn" href="#" class="easyui-linkbutton" iconCls="icon-ok"
+						style="width:100%;height:32px">注册</a>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
