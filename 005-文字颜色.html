@@ -1,89 +1,99 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>005-文字颜色</title>
-		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
-		<style type="text/css">
-			.content {
-				padding: 20px;
-				margin: 10px;
-				border: 1px dashed #ccc;
-				overflow: hidden;
-				font-size: 14px;
-			}
 
-			.content .item {
-				width: 100px;
-				height: 100px;
-				margin: 10px;
-				margin-left: unset;
-				float: left;
-				line-height: 100px;
-				text-align: center;
-				border: 1px solid #ccc;
-			}
+<head>
+	<meta charset="utf-8">
+	<title>005-文字颜色</title>
+	<!-- 引入uix样式表 -->
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-reset.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-basic.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-utility.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-extra.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-icon.css" />
 
-			.content .item:last-child {
-				background-color: #ccc;
-			}
-			
-			.content>a {
-				font-size: 14px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="content">
-			<div class="item font-red">红色</div>
-			<div class="item font-orange">橘色</div>
-			<div class="item font-yellow">黄色</div>
-			<div class="item font-olive">橄榄色</div>
-			<div class="item font-green">绿色</div>
-			<div class="item font-teal">青色</div>
-			<div class="item font-blue">蓝色</div>
-			<div class="item font-darkblue">深蓝色</div>
-			<div class="item font-violet">紫罗兰色</div>
-			<div class="item font-purple">紫色</div>
-			<div class="item font-pink">粉色</div>
-			<div class="item font-brown">棕色</div>
-			<div class="item font-grayish">浅灰色</div>
-			<div class="item font-grey">灰色</div>
-			<div class="item font-black">黑色</div>
-			<div class="item font-white">白色</div>
-		</div>
-		<div class="content">
-			<a href="#" class="font-red">.font-red</a>&nbsp;
-			<a href="#" class="font-orange">.font-orange</a>&nbsp;
-			<a href="#" class="font-yellow">.font-yellow</a>&nbsp;
-			<a href="#" class="font-olive">.font-olive</a>&nbsp;
-			<a href="#" class="font-green">.font-green</a>&nbsp;
-			<a href="#" class="font-teal">.font-teal</a>&nbsp;
-			<a href="#" class="font-blue">.font-blue</a>&nbsp;
-			<a href="#" class="font-darkblue">.font-darkblue</a>&nbsp;
-			<a href="#" class="font-violet">.font-violet</a>&nbsp;
-			<a href="#" class="font-purple">.font-purple</a>&nbsp;
-			<a href="#" class="font-pink">.font-pink</a>&nbsp;
-			<a href="#" class="font-brown">.font-brown</a>&nbsp;
-			<a href="#" class="font-grey">.font-grey</a>&nbsp;
-			<a href="#" class="font-black">.font-black</a>&nbsp;
-			<br>
-			<b class="font-red">.font-red</b>&nbsp;
-			<b class="font-orange">.font-orange</b>&nbsp;
-			<b class="font-yellow">.font-yellow</b>&nbsp;
-			<b class="font-olive">.font-olive</b>&nbsp;
-			<b class="font-green">.font-green</b>&nbsp;
-			<b class="font-teal">.font-teal</b>&nbsp;
-			<b class="font-blue">.font-blue</b>&nbsp;
-			<b class="font-darkblue">.font-darkblue</b>&nbsp;
-			<b class="font-violet">.font-violet</b>&nbsp;
-			<b class="font-purple">.font-purple</b>&nbsp;
-			<b class="font-pink">.font-pink</b>&nbsp;
-			<b class="font-brown">.font-brown</b>&nbsp;
-			<b class="font-grey">.font-grey</b>&nbsp;
-			<b class="font-black">.font-black</b>&nbsp;
-			<br>
-		</div>
-	</body>
+	<!-- 引入uix-easyui样式表 -->
+	<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+	<style type="text/css">
+		.content {
+			padding: 20px;
+			margin: 10px;
+			border: 1px dashed #ccc;
+			overflow: hidden;
+			font-size: 14px;
+		}
+
+		.content .item {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			margin-left: unset;
+			float: left;
+			line-height: 100px;
+			text-align: center;
+			border: 1px solid #ccc;
+		}
+
+		.content .item:last-child {
+			background-color: #ccc;
+		}
+
+		.content>a {
+			font-size: 14px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<div class="item font-red">红色</div>
+		<div class="item font-orange">橘色</div>
+		<div class="item font-yellow">黄色</div>
+		<div class="item font-olive">橄榄色</div>
+		<div class="item font-green">绿色</div>
+		<div class="item font-teal">青色</div>
+		<div class="item font-blue">蓝色</div>
+		<div class="item font-darkblue">深蓝色</div>
+		<div class="item font-violet">紫罗兰色</div>
+		<div class="item font-purple">紫色</div>
+		<div class="item font-pink">粉色</div>
+		<div class="item font-brown">棕色</div>
+		<div class="item font-grayish">浅灰色</div>
+		<div class="item font-grey">灰色</div>
+		<div class="item font-black">黑色</div>
+		<div class="item font-white">白色</div>
+	</div>
+	<div class="content">
+		<a href="#" class="font-red">.font-red</a>&nbsp;
+		<a href="#" class="font-orange">.font-orange</a>&nbsp;
+		<a href="#" class="font-yellow">.font-yellow</a>&nbsp;
+		<a href="#" class="font-olive">.font-olive</a>&nbsp;
+		<a href="#" class="font-green">.font-green</a>&nbsp;
+		<a href="#" class="font-teal">.font-teal</a>&nbsp;
+		<a href="#" class="font-blue">.font-blue</a>&nbsp;
+		<a href="#" class="font-darkblue">.font-darkblue</a>&nbsp;
+		<a href="#" class="font-violet">.font-violet</a>&nbsp;
+		<a href="#" class="font-purple">.font-purple</a>&nbsp;
+		<a href="#" class="font-pink">.font-pink</a>&nbsp;
+		<a href="#" class="font-brown">.font-brown</a>&nbsp;
+		<a href="#" class="font-grey">.font-grey</a>&nbsp;
+		<a href="#" class="font-black">.font-black</a>&nbsp;
+		<br>
+		<b class="font-red">.font-red</b>&nbsp;
+		<b class="font-orange">.font-orange</b>&nbsp;
+		<b class="font-yellow">.font-yellow</b>&nbsp;
+		<b class="font-olive">.font-olive</b>&nbsp;
+		<b class="font-green">.font-green</b>&nbsp;
+		<b class="font-teal">.font-teal</b>&nbsp;
+		<b class="font-blue">.font-blue</b>&nbsp;
+		<b class="font-darkblue">.font-darkblue</b>&nbsp;
+		<b class="font-violet">.font-violet</b>&nbsp;
+		<b class="font-purple">.font-purple</b>&nbsp;
+		<b class="font-pink">.font-pink</b>&nbsp;
+		<b class="font-brown">.font-brown</b>&nbsp;
+		<b class="font-grey">.font-grey</b>&nbsp;
+		<b class="font-black">.font-black</b>&nbsp;
+		<br>
+	</div>
+</body>
+
 </html>

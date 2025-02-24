@@ -4,17 +4,36 @@
 <head>
 	<meta charset="utf-8">
 	<title>006-按钮颜色</title>
-	<!-- 基础样式 -->
+	<!-- 引入jquery -->
+	<script src="./include/jquery/jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- 引入easyui -->
 	<link rel="stylesheet" href="./include/jquery-easyui-1.11.1/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
-	<link rel="stylesheet" href="css/uix.basic.css">
-	<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
-
-	<script src="jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
-
-	<!-- easyui：使用easyuiloader，可以动态加载插件及主题样式 -->
 	<script src="./include/jquery-easyui-1.11.1/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- 引入uix -->
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-reset.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-basic.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-utility.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-extra.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-icon.css" />
+	<link rel="stylesheet" href="../uix/css/themes/default/uix-element.css">
+	<link rel="stylesheet" href="../uix/css/themes/default/uix-window.css">
+
+	<script src="../uix/src/plugins/uix-core.js"></script>
+	<script src="../uix/src/plugins/uix-basic.js"></script>
+	<script src="../uix/src/plugins/uix-element.js"></script>
+	<script src="../uix/src/plugins/uix-draggable.js"></script>
+	<script src="../uix/src/plugins/uix-resizable.js"></script>
+	<script src="../uix/src/plugins/uix-window.js"></script>
+
+	<!-- 引入uix-easyui -->
+	<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+	<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+	<script src="./src/uix.easyui-lang-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./src/uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- 引入velocity动画效果库 -->
 	<script src="./include/velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="./include/velocity2/velocity.ui.js" type="text/javascript" charset="utf-8"></script>
 
@@ -31,13 +50,6 @@
 		}
 	</style>
 	<script type="text/javascript">
-		//注意：本文件使用的是easyloader，故css样式是异步加载导入的，无法提前提升优先级以覆盖默认easyui样式
-		//测试场景1：不引入basic.css，但添加easyui-x，此时easyui样式被修正为白色加大扁平按钮
-		//测试场景2：不引入basic.css，亦无easyui-x，此时easyui显示为默认皮肤样式按钮
-		//测试场景3：引入basic.css，但禁用uix-on=true，此时easyui样式被修正为白色加大扁平按钮
-		//测试场景4：引入basic.css，启用easyui-x和uix-on=ture，显示为美化后的不同颜色按钮
-		//测试场景5：引入basic.css，启用uix-on=ture，但禁用easui-x，则显示为未修正的不同颜色按钮
-
 		$(function () {
 			$(".content:eq(1)>.btn:first").click(function () {
 				$(this).next().velocity("headShake", {
@@ -48,28 +60,28 @@
 	</script>
 </head>
 
-<body class="easyui-x" uix-on="true">
+<body id="uix-easyui">
 	<div class="content">
-		<h3 style="margin-bottom: 20px;">普通链接按钮</h3>
+		<h3 style="margin-bottom: 20px;">普通链接按钮，非easyui组件</h3>
 
 		<!-- 小按钮 -->
 		<div>
-			<a class="btn btn-small bg-red">红色</a>
-			<a class="btn btn-small bg-orange">桔色</a>
-			<a class="btn btn-small bg-yellow">黄色</a>
-			<a class="btn btn-small bg-olive">橄榄色</a>
-			<a class="btn btn-small bg-green">绿色</a>
-			<a class="btn btn-small bg-teal">青色</a>
-			<a class="btn btn-small bg-blue">蓝色</a>
-			<a class="btn btn-small bg-darkblue">深蓝色</a>
-			<a class="btn btn-small bg-violet">紫罗兰色</a>
-			<a class="btn btn-small bg-purple">紫色</a>
-			<a class="btn btn-small bg-pink">粉色</a>
-			<a class="btn btn-small bg-brown">棕色</a>
-			<a class="btn btn-small bg-grayish">浅灰色</a>
-			<a class="btn btn-small bg-grey">灰色</a>
-			<a class="btn btn-small bg-black">黑色</a>
-			<a class="btn btn-small bg-white">白色</a>
+			<a class="btn btn-sm bg-red">红色</a>
+			<a class="btn btn-sm bg-orange">桔色</a>
+			<a class="btn btn-sm bg-yellow">黄色</a>
+			<a class="btn btn-sm bg-olive">橄榄色</a>
+			<a class="btn btn-sm bg-green">绿色</a>
+			<a class="btn btn-sm bg-teal">青色</a>
+			<a class="btn btn-sm bg-blue">蓝色</a>
+			<a class="btn btn-sm bg-darkblue">深蓝色</a>
+			<a class="btn btn-sm bg-violet">紫罗兰色</a>
+			<a class="btn btn-sm bg-purple">紫色</a>
+			<a class="btn btn-sm bg-pink">粉色</a>
+			<a class="btn btn-sm bg-brown">棕色</a>
+			<a class="btn btn-sm bg-grayish">浅灰色</a>
+			<a class="btn btn-sm bg-grey">灰色</a>
+			<a class="btn btn-sm bg-black">黑色</a>
+			<a class="btn btn-sm bg-white">白色</a>
 		</div>
 
 		<!-- 普通按钮 -->
@@ -94,8 +106,8 @@
 	</div>
 
 	<div class="content">
-		<h3 style="margin-bottom: 20px;">easyui-linkbutton 背景颜色按钮</h3>
-		<!-- 方法1：直接添加样式 -->
+		<h3 style="margin-bottom: 20px;">easyui-linkbutton背景颜色按钮</h3>
+		<!-- 方法1：直接在dom元素上添加样式 -->
 		<a class="easyui-linkbutton btn bg-red" data-options="size:'tiny'">red 红色</a>
 		<a class="easyui-linkbutton btn bg-orange" data-options="size:'tiny'">orange 橘色</a>
 		<a class="easyui-linkbutton btn bg-yellow" data-options="size:'tiny'">yellow 黄色</a>

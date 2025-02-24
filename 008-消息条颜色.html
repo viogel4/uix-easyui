@@ -1,114 +1,147 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>008-消息条颜色</title>
-		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
-		<style type="text/css">
-			.content {
-				padding: 20px;
-				margin: 10px;
-				border: 1px dashed #ccc;
-				overflow: hidden;
-			}
 
-			.content>div {
-				margin: 10px 0;
-			}
-		</style>
-	</head>
-	<body uix-on="true">
-		<div class="content">
-			<h3 style="margin: 20px 0;">消息条颜色</h3>
-			<!-- 默认样式，无主题 -->
-			<div class="alert alert-info">
-				<div class="alert-close">×</div>
-				<div class="alert-icon"></div>
-				<b>Info!</b> Best check yo self, you're not looking too good.
-			</div>
-			<!-- 成功 -->
-			<div class="alert alert-success bg-light-green">
-				<div class="alert-close">×</div>
-				<div class="alert-icon"></div>
-				<b>Success!</b> Best check yo self, you're not looking too good.
-			</div>
-			<!-- 警告 -->
-			<div class="alert alert-warning bg-light-orange">
-				<div class="alert-close">×</div>
-				<div class="alert-icon"></div>
-				<b>Warning!</b> Best check yo self, you're not looking too good.
-			</div>
-			<!-- 错误 -->
-			<div class="alert alert-error bg-light-red">
-				<div class="alert-close">×</div>
-				<div class="alert-icon"></div>
-				<b>Error!</b> Best check yo self, you're not looking too good.
-			</div>
+<head>
+	<meta charset="utf-8">
+	<title>008-消息条颜色</title>
+	<!-- 引入jquery -->
+	<script src="./include/jquery/jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
 
-			<!-- 标题在上样式 -->
-			<h3 style="margin: 20px 0;">消息条颜色（带标题）</h3>
-			<div class="alert alert-info alert-title">
-				<div class="alert-close">×</div>
-				<div class="alert-icon"></div>
-				<b>Info!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert alert-success alert-title bg-light-green">
-				<div class="alert-close">×</div>
-				<div class="alert-icon"></div>
-				<b>Success!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert alert-warning alert-title bg-light-orange">
-				<div class="alert-close">×</div>
-				<div class="alert-icon"></div>
-				<b>Warning!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert alert-error alert-title bg-light-red">
-				<div class="alert-close">×</div>
-				<div class="alert-icon"></div>
-				<b>Error!</b> Best check yo self, you're not looking too good.
-			</div>
+	<!-- 引入easyui -->
+	<link rel="stylesheet" href="./include/jquery-easyui-1.11.1/themes/default/easyui.css">
+	<script src="./include/jquery-easyui-1.11.1/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- 引入uix -->
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-reset.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-basic.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-utility.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-extra.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-icon.css" />
+	<link rel="stylesheet" href="../uix/css/themes/default/uix-element.css">
+	<link rel="stylesheet" href="../uix/css/themes/default/uix-window.css">
+
+	<script src="../uix/src/plugins/uix-core.js"></script>
+	<script src="../uix/src/plugins/uix-basic.js"></script>
+	<script src="../uix/src/plugins/uix-element.js"></script>
+	<script src="../uix/src/plugins/uix-draggable.js"></script>
+	<script src="../uix/src/plugins/uix-resizable.js"></script>
+	<script src="../uix/src/plugins/uix-window.js"></script>
+
+	<!-- 引入uix-easyui -->
+	<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+	<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+	<script src="./src/uix.easyui-lang-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./src/uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- 引入velocity动画效果库 -->
+	<script src="./include/velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./include/velocity2/velocity.ui.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.content {
+			padding: 20px;
+			margin: 10px;
+			border: 1px dashed #ccc;
+			overflow: hidden;
+		}
+
+		.content>div {
+			margin: 10px 0;
+		}
+	</style>
+</head>
+
+<body id="uix-easyui">
+	<div class="content">
+		<h3 style="margin: 20px 0;">消息条颜色</h3>
+		<!-- 默认样式，无主题 -->
+		<div class="alert alert-info">
+			<div class="alert-close">×</div>
+			<div class="alert-icon"></div>
+			<b>Info!</b> Best check yo self, you're not looking too good.
+		</div>
+		<!-- 成功 -->
+		<div class="alert alert-success bg-light-green">
+			<div class="alert-close">×</div>
+			<div class="alert-icon"></div>
+			<b>Success!</b> Best check yo self, you're not looking too good.
+		</div>
+		<!-- 警告 -->
+		<div class="alert alert-warning bg-light-orange">
+			<div class="alert-close">×</div>
+			<div class="alert-icon"></div>
+			<b>Warning!</b> Best check yo self, you're not looking too good.
+		</div>
+		<!-- 错误 -->
+		<div class="alert alert-error bg-light-red">
+			<div class="alert-close">×</div>
+			<div class="alert-icon"></div>
+			<b>Error!</b> Best check yo self, you're not looking too good.
 		</div>
 
-		<!-- 可直接使用背景色样式，或浅背景色样式 -->
-		<div class="content">
-			<h3 style="margin: 10px 0;">无icon消息条颜色</h3>
-			<div class="alert bg-light-red">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-orange">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-yellow">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-olive">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-green">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-teal">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-blue">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-violet">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-purple">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-pink">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-brown">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
-			<div class="alert bg-light-black">
-				<b>Greetings!</b> Best check yo self, you're not looking too good.
-			</div>
+		<!-- 标题在上样式 -->
+		<h3 style="margin: 20px 0;">消息条颜色（带标题）</h3>
+		<div class="alert alert-info alert-title">
+			<div class="alert-close">×</div>
+			<div class="alert-icon"></div>
+			<b>Info!</b> Best check yo self, you're not looking too good.
 		</div>
-	</body>
+		<div class="alert alert-success alert-title bg-light-green">
+			<div class="alert-close">×</div>
+			<div class="alert-icon"></div>
+			<b>Success!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert alert-warning alert-title bg-light-orange">
+			<div class="alert-close">×</div>
+			<div class="alert-icon"></div>
+			<b>Warning!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert alert-error alert-title bg-light-red">
+			<div class="alert-close">×</div>
+			<div class="alert-icon"></div>
+			<b>Error!</b> Best check yo self, you're not looking too good.
+		</div>
+	</div>
+
+	<!-- 可直接使用背景色样式，或浅背景色样式 -->
+	<div class="content">
+		<h3 style="margin: 10px 0;">无icon消息条颜色</h3>
+		<div class="alert bg-light-red">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-orange">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-yellow">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-olive">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-green">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-teal">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-blue">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-violet">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-purple">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-pink">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-brown">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+		<div class="alert bg-light-black">
+			<b>Greetings!</b> Best check yo self, you're not looking too good.
+		</div>
+	</div>
+</body>
+
 </html>

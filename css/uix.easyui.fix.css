@@ -1,23 +1,421 @@
-/* easyui按钮样式美化修正 */
-.easyui-x .l-btn {
-	background: #fff;
+/* 1.通用配色系统 */
+#uix-easyui .bg-primary {
+	background: var(--uix-blue);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-secondary {
+	background: var(--uix-grey-600);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-success {
+	background: var(--uix-green);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-info {
+	background: var(--uix-teal);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-warning {
+	background: var(--uix-orange);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-danger {
+	background: var(--uix-red);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-red {
+	background: var(--uix-red);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-olive {
+	background: var(--uix-olive);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-green {
+	background: var(--uix-green);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-blue {
+	background: var(--uix-blue);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-orange {
+	background: var(--uix-orange);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-yellow {
+	background: var(--uix-yellow);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-pink {
+	background: var(--uix-pink);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-violet {
+	background: var(--uix-violet);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-purple {
+	background: var(--uix-purple);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-brown {
+	background: var(--uix-brown);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-teal {
+	background: var(--uix-teal);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-white {
+	background: var(--uix-white);
+	color: var(--uix-dark);
+}
+
+#uix-easyui .bg-black {
+	background: var(--uix-black);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-dark {
+	background: var(--uix-dark);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-light {
+	background: var(--uix-light);
+	color: var(--uix-dark);
+}
+
+#uix-easyui .bg-darkblue {
+	background: var(--uix-darkblue);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-grey {
+	background: var(--uix-grey);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-grayish {
+	background: var(--uix-grayish);
+	color: var(--uix-dark);
+}
+
+#uix-easyui .bg-grey-100 {
+	background: var(--uix-grey-100);
+	color: var(--uix-dark);
+}
+
+#uix-easyui .bg-grey-200 {
+	background: var(--uix-grey-200);
+	color: var(--uix-dark);
+}
+
+#uix-easyui .bg-grey-300 {
+	background: var(--uix-grey-300);
+	color: var(--uix-dark);
+}
+
+#uix-easyui .bg-grey-400 {
+	background: var(--uix-grey-400);
+	color: var(--uix-dark);
+}
+
+#uix-easyui .bg-grey-500 {
+	background: var(--uix-grey-500);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-grey-600 {
+	background: var(--uix-grey-600);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-grey-700 {
+	background: var(--uix-grey-700);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-grey-800 {
+	background: var(--uix-grey-800);
+	color: var(--uix-light);
+}
+
+#uix-easyui .bg-grey-900 {
+	background: var(--uix-grey-900);
+	color: var(--uix-light);
+}
+
+/* 浅色背景 */
+/* 红色系 */
+#uix-easyui .bg-light-red {
+	background: #ffd2d2;
+}
+
+.bg-light-red,
+.border-red {
+	border: 1px solid #ff3737;
+}
+
+.bg-light-red,
+.font-red {
+	color: #d20000;
+}
+
+/* 橘色系 */
+#uix-easyui .bg-light-orange {
+	background: #ffd7be;
+}
+
+.bg-light-orange,
+.border-orange {
+	border: 1px solid #ff6c00;
+}
+
+.bg-light-orange,
+.font-orange {
+	color: #ff7300;
+}
+
+/* 黄色系 */
+#uix-easyui .bg-light-yellow {
+	background: #fff5cd;
+}
+
+.bg-light-yellow,
+.border-yellow {
+	border: 1px solid #ffaf00;
+}
+
+.bg-light-yellow,
+.font-yellow {
+	color: #f09600;
+}
+
+/* 橄榄色系 */
+#uix-easyui .bg-light-olive {
+	background: #faffd2;
+}
+
+.bg-light-olive,
+.border-olive {
+	border: 1px solid #afc800;
+}
+
+.bg-light-olive,
+.font-olive {
+	color: #87b400;
+}
+
+/* 绿色系 */
+#uix-easyui .bg-light-green {
+	background: #d7ffbe;
+}
+
+.bg-light-green,
+.border-green {
+	border: 1px solid #46a709;
+}
+
+.bg-light-green,
+.font-green {
+	color: #32a000;
+}
+
+/* 青色系 */
+#uix-easyui .bg-light-teal {
+	background: #c8ffff;
+}
+
+.bg-light-teal,
+.border-teal {
+	border: 1px solid #00beb4;
+}
+
+.bg-light-teal,
+.font-teal {
+	color: #00beb4;
+}
+
+/* 蓝色系 */
+#uix-easyui .bg-light-blue {
+	background: #cdebff;
+}
+
+.bg-light-blue,
+.border-blue {
+	border: 1px solid #2196ef;
+}
+
+.bg-light-blue,
+.font-blue {
+	color: #007ddc;
+}
+
+/* 深蓝色系 */
+#uix-easyui .bg-light-darkblue {
+	background: #d2ebff;
+}
+
+.bg-light-darkblue,
+.border-darkblue {
+	border: 1px solid #3273b4;
+}
+
+.bg-light-darkblue,
+.font-darkblue {
+	color: #0055aa;
+}
+
+/* 紫罗兰色系 */
+#uix-easyui .bg-light-violet {
+	background: #e6dcff;
+}
+
+.bg-light-violet,
+.border-violet {
+	border: 1px solid #915ff5;
+}
+
+.bg-light-violet,
+.font-violet {
+	color: #642dd7;
+}
+
+/* 紫色系 */
+#uix-easyui .bg-light-purple {
+	background: #f5d7ff;
+}
+
+.bg-light-purple,
+.border-purple {
+	border: 1px solid #c855eb;
+}
+
+.bg-light-purple,
+.font-purple {
+	color: #a01ec8;
+}
+
+/* 粉色系 */
+#uix-easyui .bg-light-pink {
+	background: #ffd7f0;
+}
+
+.bg-light-pink,
+.border-pink {
+	border: 1px solid #f05aaf;
+}
+
+.bg-light-pink,
+.font-pink {
+	color: #dc238c;
+}
+
+/* 棕色系 */
+#uix-easyui .bg-light-brown {
+	background: #ffebdc;
+}
+
+.bg-light-brown,
+.border-brown {
+	border: 1px solid #eb823c;
+}
+
+.bg-light-brown,
+.font-brown {
+	color: #aa551e;
+}
+
+/* 浅灰色系 */
+#uix-easyui .bg-light-grayish {
+	background: #f0f0f0;
+}
+
+.bg-light-grayish,
+.border-grayish {
+	border: 1px solid #bebebe;
+}
+
+.bg-light-grayish,
+.font-grayish {
+	color: #787878;
+}
+
+/* 灰色系 */
+#uix-easyui .bg-light-grey {
+	background: #dcdcdc;
+}
+
+.bg-light-grey,
+.border-grey {
+	border: 1px solid #a5a5a5;
+}
+
+.bg-light-grey,
+.font-grey {
+	color: #646464;
+}
+
+/* 黑色系 */
+#uix-easyui .bg-light-black {
+	background: #b9b9b9;
+}
+
+.bg-light-black,
+.border-black {
+	border: 1px solid #787878;
+}
+
+.bg-light-black,
+.font-black {
+	color: #1e1e1e;
+}
+
+/* 白色系 */
+#uix-easyui .border-white {
+	border: 1px solid #e6e6e6;
+}
+
+.font-white {
+	color: #fff
+}
+
+/* 2.easyui按钮样式美化修正 */
+#uix-easyui .l-btn {
 	border-radius: 2px;
 	user-select: none;
 }
 
-.easyui-x .l-btn:hover {
-	background: #e6e6e6;
-	border: 1px solid #adadad;
+#uix-easyui .l-btn:hover {
+	border: 1px solid transparent;
 	filter: none;
 }
 
-.easyui-x .l-btn .l-btn-text {
+#uix-easyui .l-btn .l-btn-text {
 	line-height: 24px;
-	margin: 3px 10px;
 }
 
 /* 给easyui按钮增加一个尺寸：tiny */
-.easyui-x .l-btn-tiny .l-btn-text {
+#uix-easyui .l-btn-tiny .l-btn-text {
 	line-height: 18px;
 	margin: 0 6px;
 	font-size: 12px;
@@ -71,31 +469,31 @@
 }
 
 /* 平铺按钮 */
-.easyui-x .l-btn-plain {
+#uix-easyui .l-btn-plain {
 	background: transparent;
 }
 
-.easyui-x .l-btn-plain:hover {
+#uix-easyui .l-btn-plain:hover {
 	border-radius: 3px;
 }
 
 /* progressbar样式美化及动画效果 */
-.easyui-x .progressbar {
+#uix-easyui .progressbar {
 	border-width: 0;
 	border-radius: 2px;
 	background-color: #f5f5f5;
 }
 
-.easyui-x .progressbar-value {
+#uix-easyui .progressbar-value {
 	border-radius: 2px 0 0 2px;
 }
 
-.easyui-x .progressbar-text {
+#uix-easyui .progressbar-text {
 	font-size: 12px;
 	user-select: none;
 }
 
-.easyui-x .progressbar-value>.progressbar-text {
+#uix-easyui .progressbar-value>.progressbar-text {
 	border-radius: 2px;
 }
 
@@ -124,102 +522,102 @@
 	animation: animation-progressbar 2s ease infinite;
 }
 
-/* easyui表单样式修正 */
+/* easyui表单组件样式修正 */
 /* 文本框 */
-.easyui-x .textbox {
+#uix-easyui .textbox {
 	border: 1px solid #ddd;
 }
 
-.easyui-x .textbox,
-.easyui-x .textbox .textbox-text {
+#uix-easyui .textbox,
+#uix-easyui .textbox .textbox-text {
 	margin: 0;
 	border-radius: 0;
 	transition: border .2s;
 }
 
-.easyui-x .textbox .textbox-text {
+#uix-easyui .textbox .textbox-text {
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-.easyui-x .textbox .textbox-addon {
+#uix-easyui .textbox .textbox-addon {
 	background-color: #fff;
 	border: none;
 	z-index: 1;
 }
 
 /* 文本框获取焦点 */
-.easyui-x .textbox-focused {
+#uix-easyui .textbox-focused {
 	border-color: #bbb;
 	box-shadow: unset;
 }
 
 /* 无效文本框 */
-.easyui-x .textbox-invalid {
+#uix-easyui .textbox-invalid {
 	border-color: #ff5722;
 	background-color: #fff;
 }
 
-.easyui-x .textbox-label {
+#uix-easyui.textbox-label {
 	width: unset;
 }
 
-.easyui-x .textbox-label:not(:first-child) {
+#uix-easyui .textbox-label:not(:first-child) {
 	padding-left: 15px;
 }
 
 /* 密码框察看 */
-.easyui-x .passwordbox-open {
+#uix-easyui .passwordbox-open {
 	background: url(../images/passwordbox_open.png) no-repeat center center;
 }
 
-.easyui-x .passwordbox-close {
+#uix-easyui .passwordbox-close {
 	background: url(../images/passwordbox_close.png) no-repeat center center;
 }
 
-.easyui-x .searchbox .textbox-addon-right {
+#uix-easyui .searchbox .textbox-addon-right {
 	border-left: 1px solid #ccc;
 }
 
-.easyui-x .searchbox .textbox-addon {
+#uix-easyui .searchbox .textbox-addon {
 	background: #f8f8f8;
 }
 
-.easyui-x .searchbox-button {
+#uix-easyui .searchbox-button {
 	background: url(../images/searchbox_navigate_button.png) no-repeat center center;
 }
 
 /* 带icon的按钮 */
-.easyui-x .l-btn-icon-left .l-btn-text:not(.l-btn-empty) {
+#uix-easyui .l-btn-icon-left .l-btn-text:not(.l-btn-empty) {
 	margin: 3px 15px 3px 30px;
 }
 
 /* 激活态菜单 */
-.easyui-x .menu-active {
+#uix-easyui .menu-active {
 	border-radius: 0;
 	border: 1px solid #bbb;
 	background-color: #e1e1e1;
 }
 
-.easyui-x .combo-arrow,
-.easyui-x .combo-arrow:hover {
+#uix-easyui .combo-arrow,
+#uix-easyui .combo-arrow:hover {
 	background-color: unset;
 }
 
 /* 日期选择框 */
-.easyui-x .datebox .combo-arrow {
+#uix-easyui .datebox .combo-arrow {
 	background-image: url(../images/datebox_arrow.png);
 	background-position: center center;
 }
 
 /* 面板 */
-.easyui-x .panel-header,
-.easyui-x .panel-body,
-.easyui-x .accordion {
+#uix-easyui .panel-header,
+#uix-easyui .panel-body,
+#uix-easyui .accordion {
 	border-color: #c5c5c5;
 }
 
-.easyui-x .datebox-button {
+#uix-easyui .datebox-button {
 	background-color: unset;
 	border-top: 1px solid #ddd;
 	height: 46px;
@@ -228,17 +626,17 @@
 	text-align: right;
 }
 
-.easyui-x .datebox-button>table {
+#uix-easyui .datebox-button>table {
 	display: inline-block;
 	width: unset !important;
 	font-size: 0;
 }
 
-.easyui-x .datebox-button>table tr>td:hover {
+#uix-easyui .datebox-button>table tr>td:hover {
 	background-color: #e1e1e1;
 }
 
-.easyui-x .datebox-button .datebox-button-a {
+#uix-easyui .datebox-button .datebox-button-a {
 	display: inline-block;
 	box-sizing: border-box;
 	font-weight: normal;
@@ -252,11 +650,11 @@
 	text-align: center;
 }
 
-.easyui-x .datebox-button>table tr>td:not(:first-child)>a {
+#uix-easyui .datebox-button>table tr>td:not(:first-child)>a {
 	border-left: none;
 }
 
-.easyui-x .calendar-header {
+#uix-easyui .calendar-header {
 	background-color: unset;
 	height: 46px;
 	box-sizing: border-box;
@@ -276,7 +674,7 @@
 	}
 }
 
-.easyui-x .combo-p {
+#uix-easyui .combo-p {
 	margin-top: 3px;
 	animation-name: uix-easyuix-combobox;
 	animation-duration: .3s;
@@ -285,10 +683,10 @@
 }
 
 /* 日历框 */
-.easyui-x .calendar-prevmonth,
-.easyui-x .calendar-nextmonth,
-.easyui-x .calendar-prevyear,
-.easyui-x .calendar-nextyear {
+#uix-easyui .calendar-prevmonth,
+#uix-easyui .calendar-nextmonth,
+#uix-easyui .calendar-prevyear,
+#uix-easyui .calendar-nextyear {
 	position: absolute;
 	top: 50%;
 	margin-top: -8px;
@@ -302,49 +700,49 @@
 	color: #999;
 }
 
-.easyui-x .calendar-prevyear::before {
+#uix-easyui .calendar-prevyear::before {
 	content: "\e84b";
 }
 
-.easyui-x .calendar-nextyear::before {
+#uix-easyui .calendar-nextyear::before {
 	content: "\e84a";
 }
 
-.easyui-x .calendar-prevmonth::before {
+#uix-easyui .calendar-prevmonth::before {
 	content: "\e84f";
 }
 
-.easyui-x .calendar-nextmonth::before {
+#uix-easyui .calendar-nextmonth::before {
 	content: "\e84e";
 }
 
-.easyui-x .calendar-title {
+#uix-easyui .calendar-title {
 	height: 46px;
 	line-height: 46px;
 	color: #666;
 }
 
-.easyui-x .calendar-title span {
+#uix-easyui .calendar-title span {
 	margin-top: 9px;
 }
 
-.easyui-x .calendar-day {
+#uix-easyui .calendar-day {
 	color: #666;
 	border-radius: 0;
 }
 
-.easyui-x .calendar-body th {
+#uix-easyui .calendar-body th {
 	background: unset;
 }
 
-.easyui-x .calendar-hover,
-.easyui-x .calendar-nav-hover,
-.easyui-x .calendar-menu-hover {
+#uix-easyui .calendar-hover,
+#uix-easyui .calendar-nav-hover,
+#uix-easyui .calendar-menu-hover {
 	background-color: #e1e1e1;
 	color: #000000;
 }
 
-.easyui-x .calendar-selected {
+#uix-easyui .calendar-selected {
 	background-color: #5fb878;
 	border: unset;
 	border-radius: unset;
@@ -352,19 +750,19 @@
 	padding: 0;
 }
 
-.easyui-x .calendar-menu-month {
+#uix-easyui .calendar-menu-month {
 	border-radius: 0;
 	font-weight: normal;
 }
 
-.easyui-x .calendar-menu-year {
+#uix-easyui .calendar-menu-year {
 	border: 1px solid #ccc;
 	border-radius: 0;
 	font-weight: normal;
 }
 
-.easyui-x .calendar-menu-prev,
-.easyui-x .calendar-menu-next {
+#uix-easyui .calendar-menu-prev,
+#uix-easyui .calendar-menu-next {
 	background: unset;
 	font-family: "iconfont";
 	height: 28px;
@@ -372,368 +770,368 @@
 	color: #666;
 }
 
-.easyui-x .calendar-header .calendar-nav-hover {
+#uix-easyui .calendar-header .calendar-nav-hover {
 	background-color: unset;
 }
 
-.easyui-x .calendar-menu-year-inner .calendar-nav-hover {
+#uix-easyui .calendar-menu-year-inner .calendar-nav-hover {
 	background-color: unset;
 }
 
-.easyui-x .calendar-menu-prev::before {
+#uix-easyui .calendar-menu-prev::before {
 	content: "\e84f";
 }
 
-.easyui-x .calendar-menu-next::before {
+#uix-easyui .calendar-menu-next::before {
 	content: "\e84e";
 }
 
-.easyui-x .spinner .textbox-addon-right {
+#uix-easyui .spinner .textbox-addon-right {
 	border-left: 1px solid #ddd;
 }
 
-.easyui-x .spinner .textbox-addon-left {
+#uix-easyui .spinner .textbox-addon-left {
 	border-right: 1px solid #ddd;
 }
 
-.easyui-x .spinner-arrow.spinner-button-top,
-.easyui-x .spinner-arrow.spinner-button-bottom,
-.easyui-x .spinner-arrow.spinner-button-left,
-.easyui-x .spinner-arrow.spinner-button-right {
+#uix-easyui .spinner-arrow.spinner-button-top,
+#uix-easyui .spinner-arrow.spinner-button-bottom,
+#uix-easyui .spinner-arrow.spinner-button-left,
+#uix-easyui .spinner-arrow.spinner-button-right {
 	background-color: #f8f8f8;
 }
 
-.easyui-x .spinner-arrow-up,
-.easyui-x .spinner-arrow-down,
-.easyui-x .spinner-button-up,
-.easyui-x .spinner-button-down {
+#uix-easyui .spinner-arrow-up,
+#uix-easyui .spinner-arrow-down,
+#uix-easyui .spinner-button-up,
+#uix-easyui .spinner-button-down {
 	background: url(../images/spinner_arrows.png);
 }
 
-.easyui-x .spinner-arrow-down {
+#uix-easyui .spinner-arrow-down {
 	background: url(../images/spinner_arrows.png) no-repeat -16px center;
 }
 
-.easyui-x .l-btn-icon-left .spinner-button-up {
+#uix-easyui .l-btn-icon-left .spinner-button-up {
 	background: url(../images/spinner_arrows.png) no-repeat -32px center;
 }
 
-.easyui-x .l-btn-icon-left .spinner-button-down {
+#uix-easyui .l-btn-icon-left .spinner-button-down {
 	background: url(../images/spinner_arrows.png) no-repeat -48px center;
 }
 
 /* 无文字按钮icon水平居中 */
-.easyui-x .l-btn-icon-left>.l-btn-empty~.l-btn-icon {
+#uix-easyui .l-btn-icon-left>.l-btn-empty~.l-btn-icon {
 	left: 50%;
 	margin-left: -8px;
 }
 
 /* 下拉框 */
-.easyui-x .combo-arrow {
+#uix-easyui .combo-arrow {
 	background: url(../images/combo_arrow.png) no-repeat center center;
 	transition: all 0.3s;
 }
 
-.easyui-x .combo-arrow.combo-arrow-up {
+#uix-easyui .combo-arrow.combo-arrow-up {
 	transform: rotate(180deg);
 }
 
-.easyui-x .combobox-item-hover {
+#uix-easyui .combobox-item-hover {
 	background-color: #f6f6f6;
 	transition: .2s all;
 }
 
-.easyui-x .combobox-item-selected {
+#uix-easyui .combobox-item-selected {
 	background-color: #5fb878;
 	color: #fff;
 }
 
-.easyui-x .combobox-item {
+#uix-easyui .combobox-item {
 	cursor: pointer;
 }
 
 /* 文本域 */
-.easyui-x .textbox textarea.textbox-text {
+#uix-easyui .textbox textarea.textbox-text {
 	padding-top: 6px;
 	padding-bottom: 6px;
 }
 
 /* 树结构相关 */
-.easyui-x .tree-expanded,
-.easyui-x .tree-expanded-hover,
-.easyui-x .tree-collapsed,
-.easyui-x .tree-collapsed-hover,
-.easyui-x .tree-lines .tree-expanded,
-.easyui-x .tree-lines .tree-root-first .tree-expanded,
-.easyui-x .tree-lines .tree-collapsed,
-.easyui-x .tree-lines .tree-root-first .tree-collapsed,
-.easyui-x .tree-lines .tree-node-last .tree-expanded,
-.easyui-x .tree-lines .tree-root-one .tree-expanded,
-.easyui-x .tree-lines .tree-node-last .tree-collapsed,
-.easyui-x .tree-lines .tree-root-one .tree-collapsed,
-.easyui-x .tree-line,
-.easyui-x .tree-join,
-.easyui-x .tree-joinbottom,
-.easyui-x .tree-folder,
-.easyui-x .tree-folder-open,
-.easyui-x .tree-file,
-.easyui-x .tree-checkbox0,
-.easyui-x .tree-checkbox1,
-.easyui-x .tree-checkbox2,
-.easyui-x .tree-dnd-yes,
-.easyui-x .tree-dnd-no {
+#uix-easyui .tree-expanded,
+#uix-easyui .tree-expanded-hover,
+#uix-easyui .tree-collapsed,
+#uix-easyui .tree-collapsed-hover,
+#uix-easyui .tree-lines .tree-expanded,
+#uix-easyui .tree-lines .tree-root-first .tree-expanded,
+#uix-easyui .tree-lines .tree-collapsed,
+#uix-easyui .tree-lines .tree-root-first .tree-collapsed,
+#uix-easyui .tree-lines .tree-node-last .tree-expanded,
+#uix-easyui .tree-lines .tree-root-one .tree-expanded,
+#uix-easyui .tree-lines .tree-node-last .tree-collapsed,
+#uix-easyui .tree-lines .tree-root-one .tree-collapsed,
+#uix-easyui .tree-line,
+#uix-easyui .tree-join,
+#uix-easyui .tree-joinbottom,
+#uix-easyui .tree-folder,
+#uix-easyui .tree-folder-open,
+#uix-easyui .tree-file,
+#uix-easyui .tree-checkbox0,
+#uix-easyui .tree-checkbox1,
+#uix-easyui .tree-checkbox2,
+#uix-easyui .tree-dnd-yes,
+#uix-easyui .tree-dnd-no {
 	background-image: url(../images/tree_icons.png);
 	background-repeat: no-repeat;
 }
 
-.easyui-x .tree-folder {
+#uix-easyui .tree-folder {
 	background-position: -208px 0;
 }
 
-.easyui-x .tree-folder-open {
+#uix-easyui .tree-folder-open {
 	background-position: -224px 0;
 }
 
-.easyui-x .tree-node-hover {
+#uix-easyui .tree-node-hover {
 	background-color: #f6f6f6;
 	transition: .2s all;
 }
 
-.easyui-x .tree-node-selected {
+#uix-easyui .tree-node-selected {
 	background: #5fb878;
 	color: #fff;
 }
 
 /* 表格相关 */
-.easyui-x .datagrid-row-over,
-.easyui-x .datagrid-header td.datagrid-header-over {
+#uix-easyui .datagrid-row-over,
+#uix-easyui .datagrid-header td.datagrid-header-over {
 	background: #f6f6f6;
 	color: #000000;
 	cursor: default;
 }
 
-.easyui-x .datagrid-row-selected {
+#uix-easyui .datagrid-row-selected {
 	background: #5fb878;
 }
 
-.easyui-x .datagrid-header td,
-.easyui-x .datagrid-body td,
-.easyui-x .datagrid-footer td {
+#uix-easyui .datagrid-header td,
+#uix-easyui .datagrid-body td,
+#uix-easyui .datagrid-footer td {
 	border-color: #eee;
 	border-style: solid;
 }
 
-.easyui-x .datagrid-header,
-.easyui-x .datagrid-td-rownumber {
+#uix-easyui .datagrid-header,
+#uix-easyui .datagrid-td-rownumber {
 	background: unset;
 	background-color: #f6f6f6;
 }
 
 /* 面板相关 */
-.easyui-x .panel-header:not(.window-header) {
+#uix-easyui .panel-header:not(.window-header) {
 	padding: 10px 15px;
 	background: unset;
 	background-color: #f8f8f8;
 }
 
 /* 支持面板标题高度自动扩展 */
-.easyui-x .panel-footer {
+#uix-easyui .panel-footer {
 	border-color: #c5c5c5;
 }
 
-.easyui-x .panel-title {
+#uix-easyui .panel-title {
 	color: #333;
 	height: unset;
 }
 
-.easyui-x .panel-title>p {
+#uix-easyui .panel-title>p {
 	opacity: .5;
 	font-weight: normal;
 }
 
-.easyui-x .panel-title>.right-sub-title {
+#uix-easyui .panel-title>.right-sub-title {
 	display: inline;
 	margin-left: 10px;
 }
 
-.easyui-x .bg>.panel-title {
+#uix-easyui .bg>.panel-title {
 	color: #fff;
 }
 
-.easyui-x .bg.panel-header {
+#uix-easyui .bg.panel-header {
 	border-color: transparent;
 }
 
-.easyui-x .panel-icon {
+#uix-easyui .panel-icon {
 	left: 10px;
 }
 
-.easyui-x .panel-tool {
+#uix-easyui .panel-tool {
 	height: 22px;
 	margin-top: -11px;
 }
 
 /* 关闭按钮，按钮大小变为22像素，所以坐标要+3 */
-.easyui-x .panel-tool-close {
+#uix-easyui .panel-tool-close {
 	background: url(../images/panel_tools.png) no-repeat -16px 0px;
 }
 
-.easyui-x .bg .panel-tool-close {
+#uix-easyui .bg .panel-tool-close {
 	background: url(../images/panel_tools_white.png) no-repeat -16px 0px;
 }
 
-.easyui-x .panel-tool-collapse {
+#uix-easyui .panel-tool-collapse {
 	background: url(../images/panel_tools.png) no-repeat -32px 0px;
 }
 
-.easyui-x .bg .panel-tool-collapse {
+#uix-easyui .bg .panel-tool-collapse {
 	background: url(../images/panel_tools_white.png) no-repeat -32px 0px;
 }
 
-.easyui-x .panel-tool-expand {
+#uix-easyui .panel-tool-expand {
 	background: url(../images/panel_tools.png) no-repeat -32px -16px;
 }
 
-.easyui-x .bg .panel-tool-expand {
+#uix-easyui .bg .panel-tool-expand {
 	background: url(../images/panel_tools_white.png) no-repeat -32px -16px;
 }
 
-.easyui-x .panel-tool-min {
+#uix-easyui .panel-tool-min {
 	background: url(../images/panel_tools.png) no-repeat 0px 0px;
 }
 
-.easyui-x .bg .panel-tool-min {
+#uix-easyui .bg .panel-tool-min {
 	background: url(../images/panel_tools_white.png) no-repeat 0px 0px;
 }
 
-.easyui-x .panel-tool-max {
+#uix-easyui .panel-tool-max {
 	background: url(../images/panel_tools.png) no-repeat 0px -16px;
 }
 
-.easyui-x .bg .panel-tool-max {
+#uix-easyui .bg .panel-tool-max {
 	background: url(../images/panel_tools_white.png) no-repeat 0px -16px;
 }
 
-.easyui-x .panel-tool-restore {
+#uix-easyui .panel-tool-restore {
 	background: url(../images/panel_tools.png) no-repeat -16px -16px;
 }
 
-.easyui-x .bg .panel-tool-restore {
+#uix-easyui .bg .panel-tool-restore {
 	background: url(../images/panel_tools_white.png) no-repeat -16px -16px;
 }
 
-.easyui-x .panel-tool a,
-.easyui-x .bg .panel-tool a {
+#uix-easyui .panel-tool a,
+#uix-easyui .bg .panel-tool a {
 	width: 22px;
 	height: 22px;
 	padding: 3px;
 	background-origin: content-box;
 }
 
-.easyui-x .panel-tool a:hover {
+#uix-easyui .panel-tool a:hover {
 	opacity: 1;
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* 布局相关 */
-.easyui-x .layout-split-west {
+#uix-easyui .layout-split-west {
 	border-right: 5px solid #f8f8f8;
 }
 
-.easyui-x .layout-split-proxy-h,
-.easyui-x .layout-split-proxy-v {
+#uix-easyui .layout-split-proxy-h,
+#uix-easyui .layout-split-proxy-v {
 	background-color: #c5c5c5;
 }
 
 /* 表格相关 */
-.easyui-x .datagrid-header-row,
-.easyui-x .datagrid-row {
+#uix-easyui .datagrid-header-row,
+#uix-easyui .datagrid-row {
 	height: 40px;
 }
 
-.easyui-x .datagrid-toolbar {
+#uix-easyui .datagrid-toolbar {
 	padding: 5px 10px;
 }
 
 /* 分页条相关 */
-.easyui-x .pagination-first,
-.easyui-x .pagination-prev,
-.easyui-x .pagination-next,
-.easyui-x .pagination-last,
-.easyui-x .pagination-load {
+#uix-easyui .pagination-first,
+#uix-easyui .pagination-prev,
+#uix-easyui .pagination-next,
+#uix-easyui .pagination-last,
+#uix-easyui .pagination-load {
 	background-image: url(../images/pagination_icons.png);
 }
 
-.easyui-x .pagination-page-list,
-.easyui-x .pagination .pagination-num {
+#uix-easyui .pagination-page-list,
+#uix-easyui .pagination .pagination-num {
 	border-color: #ddd;
 }
 
-.easyui-x .pagination .pagination-num {
+#uix-easyui .pagination .pagination-num {
 	margin: 0 8px;
 }
 
 /* 选项卡 */
-.easyui-x .tabs-header,
-.easyui-x .tabs-tool {
+#uix-easyui .tabs-header,
+#uix-easyui .tabs-tool {
 	background-color: #f8f8f8;
 }
 
-.easyui-x .tabs-header {
+#uix-easyui .tabs-header {
 	padding-top: 6px;
 }
 
-.easyui-x .tabs-header,
-.easyui-x .tabs-scroller-left,
-.easyui-x .tabs-scroller-right,
-.easyui-x .tabs-tool,
-.easyui-x .tabs,
-.easyui-x .tabs-panels,
-.easyui-x .tabs li .tabs-inner,
-.easyui-x .tabs li.tabs-selected .tabs-inner,
-.easyui-x .tabs-header-bottom .tabs li.tabs-selected .tabs-inner,
-.easyui-x .tabs-header-left .tabs li.tabs-selected .tabs-inner,
-.easyui-x .tabs-header-right .tabs li.tabs-selected .tabs-inner {
+#uix-easyui .tabs-header,
+#uix-easyui .tabs-scroller-left,
+#uix-easyui .tabs-scroller-right,
+#uix-easyui .tabs-tool,
+#uix-easyui .tabs,
+#uix-easyui .tabs-panels,
+#uix-easyui .tabs li .tabs-inner,
+#uix-easyui .tabs li.tabs-selected .tabs-inner,
+#uix-easyui .tabs-header-bottom .tabs li.tabs-selected .tabs-inner,
+#uix-easyui .tabs-header-left .tabs li.tabs-selected .tabs-inner,
+#uix-easyui .tabs-header-right .tabs li.tabs-selected .tabs-inner {
 	border-color: #c5c5c5;
 }
 
-.easyui-x .tabs li .tabs-inner {
+#uix-easyui .tabs li .tabs-inner {
 	border-radius: 3px 3px 0 0;
 	background: unset;
 }
 
-.easyui-x .tabs li.tabs-selected .tabs-inner {
+#uix-easyui .tabs li.tabs-selected .tabs-inner {
 	border-bottom: 1px solid #fff;
 	background: unset;
 }
 
-.easyui-x .tabs li .tabs-inner,
-.easyui-x .tabs li.tabs-selected .tabs-inner {
+#uix-easyui .tabs li .tabs-inner,
+#uix-easyui .tabs li.tabs-selected .tabs-inner {
 	color: #333;
 	user-select: none;
 }
 
-.easyui-x .tabs li .tabs-inner:hover {
+#uix-easyui .tabs li .tabs-inner:hover {
 	background-color: #eee;
 }
 
-.easyui-x .tabs-closable {
+#uix-easyui .tabs-closable {
 	padding-right: 12px;
 }
 
-.easyui-x .tabs li .tabs-close {
+#uix-easyui .tabs li .tabs-close {
 	background: url(../images/tabs_icons.png) no-repeat -32px center;
 	border-radius: 2px;
 	width: 16px;
 	text-align: center;
 }
 
-.easyui-x .tabs li .tabs-close:hover {
+#uix-easyui .tabs li .tabs-close:hover {
 	background-color: #FF5722;
 }
 
-.easyui-x .tabs li .tabs-close,
-.easyui-x .tabs-p-tool {
+#uix-easyui .tabs li .tabs-close,
+#uix-easyui .tabs-p-tool {
 	height: 16px;
 	margin-top: -8px;
 }
@@ -743,77 +1141,77 @@
 	content: "\e82a";
 } */
 
-.easyui-x .tabs li .tabs-close:hover::after {
+#uix-easyui .tabs li .tabs-close:hover::after {
 	color: #eee;
 }
 
-.easyui-x .tabs-scroller-left {
+#uix-easyui .tabs-scroller-left {
 	background: url(../images/tabs_icons.png) no-repeat 1px center;
 }
 
-.easyui-x .tabs-scroller-left:hover,
-.easyui-x .tabs-scroller-right:hover {
+#uix-easyui .tabs-scroller-left:hover,
+#uix-easyui .tabs-scroller-right:hover {
 	background-color: #FF5722;
 	color: #eee;
 }
 
-.easyui-x .tabs-scroller-right {
+#uix-easyui .tabs-scroller-right {
 	background: url(../images/tabs_icons.png) no-repeat -15px center;
 }
 
 /* 手风琴 */
-.easyui-x .accordion .accordion-header {
+#uix-easyui .accordion .accordion-header {
 	background-color: #f8f8f8;
 }
 
-.easyui-x .accordion .accordion-header-selected {
+#uix-easyui .accordion .accordion-header-selected {
 	background-color: #5fb878;
 }
 
-.easyui-x .accordion .panel-last>.accordion-header {
+#uix-easyui .accordion .panel-last>.accordion-header {
 	border-bottom-color: #c5c5c5;
 }
 
-.easyui-x .accordion .panel-last>.accordion-header-selected,
-.easyui-x .accordion .panel-last>.accordion-header-border {
+#uix-easyui .accordion .panel-last>.accordion-header-selected,
+#uix-easyui .accordion .panel-last>.accordion-header-border {
 	border-bottom-color: #c5c5c5;
 }
 
-.easyui-x .accordion .accordion-header-selected .accordion-collapse::after {
+#uix-easyui .accordion .accordion-header-selected .accordion-collapse::after {
 	color: #fff;
 }
 
-.easyui-x .accordion-collapse {
+#uix-easyui .accordion-collapse {
 	background: url(../images/accordion_arrows.png) no-repeat 0 0;
 }
 
-.easyui-x .accordion-expand {
+#uix-easyui .accordion-expand {
 	background: url(../images/accordion_arrows.png) no-repeat -16px 0;
 }
 
 /* 选项卡相关，由于要比行内样式优先级高，所以此处使用了important */
 /* 添加如下样式，使easyui-tab支持原生css响应式，可随transition过渡而自动响应尺寸，动画流畅 */
-.easyui-x .tabs-container.easyui-fluid {
+#uix-easyui .tabs-container.easyui-fluid {
 	width: 100% !important
 }
 
-.easyui-x .tabs-container.easyui-fluid>.tabs-header {
+#uix-easyui .tabs-container.easyui-fluid>.tabs-header {
 	width: 100% !important;
 }
 
-.easyui-x .tabs-container.easyui-fluid>.tabs-panels {
+#uix-easyui .tabs-container.easyui-fluid>.tabs-panels {
 	width: 100% !important;
 }
 
-.easyui-x .tabs-container.easyui-fluid>.tabs-panels>.panel {
+#uix-easyui .tabs-container.easyui-fluid>.tabs-panels>.panel {
 	width: 100% !important;
 }
 
-.easyui-x .tabs-container.easyui-fluid>.tabs-panels>.panel>.panel-body {
+#uix-easyui .tabs-container.easyui-fluid>.tabs-panels>.panel>.panel-body {
 	width: 100% !important;
 }
 
-.easyui-x .tabs-container .tab-iframe-container {
+#uix-easyui .tabs-container .tab-iframe-container {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -822,7 +1220,7 @@
 	height: 100%;
 }
 
-.easyui-x .tabs-container .tab-iframe-mask {
+#uix-easyui .tabs-container .tab-iframe-mask {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -834,7 +1232,7 @@
 	filter: alpha(opacity=30);
 }
 
-.easyui-x .tabs-container .tab-iframe-mask-msg {
+#uix-easyui .tabs-container .tab-iframe-mask-msg {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -851,46 +1249,46 @@
 
 /* datagrid相关，由于要比行内样式优先级高，所以此处使用了important */
 /* 添加如下样式，使easyui-tab支持原生css响应式，可随transition过渡而自动响应尺寸，动画流畅 */
-.easyui-x .datagrid.easyui-fluid {
+#uix-easyui .datagrid.easyui-fluid {
 	width: 100% !important;
 }
 
-.easyui-x .datagrid.easyui-fluid>.panel-header {
+#uix-easyui .datagrid.easyui-fluid>.panel-header {
 	width: 100% !important;
 }
 
-.easyui-x .datagrid.easyui-fluid>.panel-body {
+#uix-easyui .datagrid.easyui-fluid>.panel-body {
 	width: 100% !important;
 }
 
 /* window组件相关 */
-.easyui-x .window {
+#uix-easyui .window {
 	background: none;
 	background-color: #f8f8f8;
 }
 
-.easyui-x .window,
-.easyui-x .window-shadow {
+#uix-easyui .window,
+#uix-easyui .window-shadow {
 	border-radius: 0;
 }
 
-.easyui-x .window,
-.easyui-x .window .window-body {
+#uix-easyui .window,
+#uix-easyui .window .window-body {
 	border-color: #c5c5c5;
 }
 
-.easyui-x .window-proxy {
+#uix-easyui .window-proxy {
 	border-color: #c5c5c5;
 }
 
 /* 增大窗口标题高度 */
-.easyui-x .window .panel-title {
+#uix-easyui .window .panel-title {
 	height: 24px;
 	line-height: 24px;
 }
 
 /* 窗体拖动时的一个遮罩，防止焦点进入到其它组件，停止拖动后移除 */
-.easyui-x .window-drag-mask {
+#uix-easyui .window-drag-mask {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -899,17 +1297,17 @@
 	background-color: rgba(0, 0, 0, 0.05);
 }
 
-.easyui-x .window .window-header .panel-with-icon {
+#uix-easyui .window .window-header .panel-with-icon {
 	padding-left: 20px;
 }
 
 /* 对话框相关样式 */
-.easyui-x .dialog-button {
+#uix-easyui .dialog-button {
 	border-color: #dddddd #c5c5c5 #c5c5c5 #c5c5c5;
 }
 
 /* 弹出消息框样式 */
-.easyui-x .uix-messager-msg {
+#uix-easyui .uix-messager-msg {
 	display: inline-block;
 	opacity: 0;
 	max-width: 600px;
@@ -925,21 +1323,21 @@
 }
 
 /* switchbutton */
-.easyui-x .switchbutton {
+#uix-easyui .switchbutton {
 	user-select: none;
 	border: 1px solid transparent;
 	background: #5fb878;
 }
 
-.easyui-x .switchbutton.off {
+#uix-easyui .switchbutton.off {
 	border: 1px solid #bbb;
 }
 
-.easyui-x .switchbutton {
+#uix-easyui .switchbutton {
 	border-radius: 12px;
 }
 
-.easyui-x .switchbutton-handle {
+#uix-easyui .switchbutton-handle {
 	border-radius: 50%;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -949,67 +1347,67 @@
 	transition: background-color .3s;
 }
 
-.easyui-x .switchbutton.off .switchbutton-handle {
+#uix-easyui .switchbutton.off .switchbutton-handle {
 	background-color: #d2d2d2;
 }
 
-.easyui-x .switchbutton-on {
+#uix-easyui .switchbutton-on {
 	background: #5fb878;
 	color: #fff;
 }
 
-.easyui-x .switchbutton-off {
+#uix-easyui .switchbutton-off {
 	color: #666;
 }
 
-.easyui-x .switchbutton-on,
-.easyui-x .switchbutton-off,
-.easyui-x .switchbutton-handle {
+#uix-easyui .switchbutton-on,
+#uix-easyui .switchbutton-off,
+#uix-easyui .switchbutton-handle {
 	font-size: 12px;
 }
 
 /* 表格详情面板 */
-.easyui-x .datagrid-view2 .datagrid-row-detail {
+#uix-easyui .datagrid-view2 .datagrid-row-detail {
 	margin: 6px 6px 6px 0;
 	border: 1px dashed #ccc;
 	box-sizing: border-box;
 	padding: 10px;
 }
 
-.easyui-x .datagrid-view1 .datagrid-row-detail {
+#uix-easyui .datagrid-view1 .datagrid-row-detail {
 	margin: 0;
 	border: none;
 }
 
 /* datagrid没有header时，不显示下边框 */
-.easyui-x .datagrid-header[style*='height: 0px'] {
+#uix-easyui .datagrid-header[style*='height: 0px'] {
 	border-width: 0;
 }
 
-.easyui-x .propertygrid .datagrid-group,
-.easyui-x .propertygrid .datagrid-view1 .datagrid-body,
-.easyui-x .propertygrid .datagrid-view1 .datagrid-row-over,
-.easyui-x .propertygrid .datagrid-view1 .datagrid-row-selected {
+#uix-easyui .propertygrid .datagrid-group,
+#uix-easyui .propertygrid .datagrid-view1 .datagrid-body,
+#uix-easyui .propertygrid .datagrid-view1 .datagrid-row-over,
+#uix-easyui .propertygrid .datagrid-view1 .datagrid-row-selected {
 	background: #fafafa;
 }
 
 /* 分页组件 */
-.easyui-x .pagination-info-left .pagination-info {
+#uix-easyui .pagination-info-left .pagination-info {
 	float: left;
 }
 
 /* prompt框 */
-.easyui-x .messager-body .messager-input {
+#uix-easyui .messager-body .messager-input {
 	padding-left: 5px;
 	border: 1px solid #ccc;
 }
 
 /* 表格分页条取消用户选中 */
-.easyui-x .pagination {
+#uix-easyui .pagination {
 	user-select: none;
 }
 
 /* 日历组件 */
-.easyui-x .calendar {
+#uix-easyui .calendar {
 	border-color: #ccc;
 }

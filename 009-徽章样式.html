@@ -1,112 +1,145 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>009-徽章样式</title>
-		<link rel="stylesheet" type="text/css" href="css/uix.reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
-		<style type="text/css">
-			.content {
-				padding: 20px;
-				margin: 10px;
-				border: 1px dashed #ccc;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="content">
-			<table class="table">
-				<thead>
-					<tr style="text-align:center;">
-						<th>色系</th>
-						<th>效果</th>
-						<th>效果</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td style="text-align:center;">红色</td>
-						<td><span class="badge bg-red">10</span></td>
-						<td><span class="badge-tip bg-red"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">橘色</td>
-						<td><span class="badge bg-orange">10</span></td>
-						<td><span class="badge-tip bg-orange"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">黄色</td>
-						<td><span class="badge bg-yellow">10</span></td>
-						<td><span class="badge-tip bg-yellow"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">橄榄色</td>
-						<td><span class="badge bg-olive">10</span></td>
-						<td><span class="badge-tip bg-olive"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">绿色</td>
-						<td><span class="badge bg-green">10</span></td>
-						<td><span class="badge-tip bg-green"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">青色</td>
-						<td><span class="badge bg-teal">10</span></td>
-						<td><span class="badge-tip bg-teal"></span></td>
-					</tr>
 
-					<tr>
-						<td style="text-align:center;">蓝色</td>
-						<td><span class="badge bg-blue">10</span></td>
-						<td><span class="badge-tip bg-blue"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">深蓝色</td>
-						<td><span class="badge bg-darkblue">10</span></td>
-						<td><span class="badge-tip bg-darkblue"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">紫罗兰色</td>
-						<td><span class="badge bg-violet">10</span></td>
-						<td><span class="badge-tip bg-violet"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">紫色</td>
-						<td><span class="badge bg-purple">10</span></td>
-						<td><span class="badge-tip bg-purple"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">粉色</td>
-						<td><span class="badge bg-pink">10</span></td>
-						<td><span class="badge-tip bg-pink"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">棕色</td>
-						<td><span class="badge bg-brown">10</span></td>
-						<td><span class="badge-tip bg-brown"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">浅灰色</td>
-						<td><span class="badge bg-grayish">10</span></td>
-						<td><span class="badge-tip bg-grayish"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">灰色</td>
-						<td><span class="badge bg-grey">10</span></td>
-						<td><span class="badge-tip bg-grey"></span></td>
-					</tr>
-					<tr>
-						<td style="text-align:center;">黑色</td>
-						<td><span class="badge bg-black">10</span></td>
-						<td><span class="badge-tip bg-black"></span></td>
-					</tr>
-					<tr style="background-color: lightgray">
-						<td style="text-align:center;">白色</td>
-						<td><span class="badge bg-white font-grayish">10</span></td>
-						<td><span class="badge-tip bg-white"></span></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</body>
+<head>
+	<meta charset="utf-8">
+	<title>009-徽章样式</title>
+	<!-- 引入jquery -->
+	<script src="./include/jquery/jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- 引入easyui -->
+	<link rel="stylesheet" href="./include/jquery-easyui-1.11.1/themes/default/easyui.css">
+	<script src="./include/jquery-easyui-1.11.1/jquery.easyui.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- 引入uix -->
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-reset.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-basic.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-utility.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-extra.css" />
+	<link rel="stylesheet" type="text/css" href="../uix/css/uix-icon.css" />
+	<link rel="stylesheet" href="../uix/css/themes/default/uix-element.css">
+	<link rel="stylesheet" href="../uix/css/themes/default/uix-window.css">
+
+	<script src="../uix/src/plugins/uix-core.js"></script>
+	<script src="../uix/src/plugins/uix-basic.js"></script>
+	<script src="../uix/src/plugins/uix-element.js"></script>
+	<script src="../uix/src/plugins/uix-draggable.js"></script>
+	<script src="../uix/src/plugins/uix-resizable.js"></script>
+	<script src="../uix/src/plugins/uix-window.js"></script>
+
+	<!-- 引入uix-easyui -->
+	<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+	<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+	<script src="./src/uix.easyui-lang-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./src/uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- 引入velocity动画效果库 -->
+	<script src="./include/velocity2/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./include/velocity2/velocity.ui.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.content {
+			padding: 20px;
+			margin: 10px;
+			border: 1px dashed #ccc;
+		}
+	</style>
+</head>
+
+<body id="uix-easyui">
+	<div class="content">
+		<table class="table">
+			<thead>
+				<tr style="text-align:center;">
+					<th>色系</th>
+					<th>效果</th>
+					<th>效果</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="text-align:center;">红色</td>
+					<td><span class="badge bg-red">10</span></td>
+					<td><span class="badge-tip bg-red"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">橘色</td>
+					<td><span class="badge bg-orange">10</span></td>
+					<td><span class="badge-tip bg-orange"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">黄色</td>
+					<td><span class="badge bg-yellow">10</span></td>
+					<td><span class="badge-tip bg-yellow"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">橄榄色</td>
+					<td><span class="badge bg-olive">10</span></td>
+					<td><span class="badge-tip bg-olive"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">绿色</td>
+					<td><span class="badge bg-green">10</span></td>
+					<td><span class="badge-tip bg-green"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">青色</td>
+					<td><span class="badge bg-teal">10</span></td>
+					<td><span class="badge-tip bg-teal"></span></td>
+				</tr>
+
+				<tr>
+					<td style="text-align:center;">蓝色</td>
+					<td><span class="badge bg-blue">10</span></td>
+					<td><span class="badge-tip bg-blue"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">深蓝色</td>
+					<td><span class="badge bg-darkblue">10</span></td>
+					<td><span class="badge-tip bg-darkblue"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">紫罗兰色</td>
+					<td><span class="badge bg-violet">10</span></td>
+					<td><span class="badge-tip bg-violet"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">紫色</td>
+					<td><span class="badge bg-purple">10</span></td>
+					<td><span class="badge-tip bg-purple"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">粉色</td>
+					<td><span class="badge bg-pink">10</span></td>
+					<td><span class="badge-tip bg-pink"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">棕色</td>
+					<td><span class="badge bg-brown">10</span></td>
+					<td><span class="badge-tip bg-brown"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">浅灰色</td>
+					<td><span class="badge bg-grayish">10</span></td>
+					<td><span class="badge-tip bg-grayish"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">灰色</td>
+					<td><span class="badge bg-grey">10</span></td>
+					<td><span class="badge-tip bg-grey"></span></td>
+				</tr>
+				<tr>
+					<td style="text-align:center;">黑色</td>
+					<td><span class="badge bg-black">10</span></td>
+					<td><span class="badge-tip bg-black"></span></td>
+				</tr>
+				<tr style="background-color: lightgray">
+					<td style="text-align:center;">白色</td>
+					<td><span class="badge bg-white font-grayish">10</span></td>
+					<td><span class="badge-tip bg-white"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
 </html>
