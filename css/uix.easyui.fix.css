@@ -643,27 +643,22 @@
 .l-btn:hover {
 	background: unset;
 }
+
 .l-btn:hover::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #e1e1e1;
 }
 
-
-
-
-
-
-
-
-
-
-
+.m-btn-active,
+.s-btn-active {
+	background: #e1e1e1;
+}
 
 /* 激活态菜单 */
 #uix-easyui .menu-active {
@@ -679,9 +674,20 @@
 
 /* 日期选择框 */
 #uix-easyui .datebox .combo-arrow {
-	background-image: url(../images/datebox_arrow.png);
-	background-position: center center;
+	/* background-image: url(../images/datebox_arrow.png);
+	background-position: center center; */
+	background: unset;
 }
+
+#uix-easyui .datebox .combo-arrow::before {
+	content: "\e67b";
+}
+
+
+
+
+
+
 
 /* 面板 */
 #uix-easyui .panel-header,
@@ -901,11 +907,26 @@
 
 /* 下拉框 */
 #uix-easyui .combo-arrow {
-	background: url(../images/combo_arrow.png) no-repeat center center;
+	/* background: url(../images/combo_arrow.png) no-repeat center center;
+	transition: all 0.3s; */
+	background: unset;
+}
+
+#uix-easyui .combo-arrow::before {
+	content: "\e66a";
 	transition: all 0.3s;
 }
 
-#uix-easyui .combo-arrow.combo-arrow-up {
+
+
+
+
+
+
+
+
+
+#uix-easyui .combo-arrow.combo-arrow-up::before {
 	transform: rotate(180deg);
 }
 
