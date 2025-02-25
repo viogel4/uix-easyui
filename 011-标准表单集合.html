@@ -29,7 +29,10 @@
 
 	<!-- 引入uix-easyui -->
 	<link rel="stylesheet" type="text/css" href="css/uix.basic.css" />
+	<link rel="stylesheet" type="text/css" href="css/iconfont/iconfont.css" />
 	<link rel="stylesheet" type="text/css" href="css/uix.easyui.fix.css" />
+
+
 	<script src="./src/uix.easyui-lang-zh_CN.js" type="text/javascript" charset="utf-8"></script>
 	<script src="./src/uix.easyui.extend.js" type="text/javascript" charset="utf-8"></script>
 
@@ -103,8 +106,10 @@
 				<input class="easyui-searchbox" style="width:100%;">
 			</div>
 			<div style="margin-bottom:20px">
-				<label class="label-top">带图标按钮的文本框:</label>
-				<input class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:100%">
+				<label class="label-top">带图标按钮的文本框(注意：源码使用iconCls则图标无滑过效果):</label>
+				<input class="easyui-textbox" data-options="icons:[{
+					iconCls:'icon-search'
+				}]" style="width:100%">
 			</div>
 
 			<div style="margin-bottom:20px">
@@ -126,8 +131,8 @@
 				<input class="easyui-searchbox" data-options="prompt:'请输入关键字',menu:'#mm1111',searcher:doSearch"
 					style="width:300px" />
 				<div id="mm1111">
-					<div data-options="name:'all',iconCls:'icon-ok'">所有新闻</div>
-					<div data-options="name:'sports'">体育新闻</div>
+					<div data-options="name:'all',iconCls:'iconfont icon-search'">所有新闻</div>
+					<div data-options="name:'sports',iconCls:'iconfont icon-cry'">体育新闻</div>
 				</div>
 				<script>
 					function doSearch(value, name) {
@@ -142,7 +147,7 @@
 					data-options="prompt:'请输入关键字',menu:'#mm2222',searcher:doSearch2,disabled:true"
 					style="width:300px"></input>
 				<div id="mm2222">
-					<div data-options="name:'all',iconCls:'icon-ok'">所有新闻</div>
+					<div data-options="name:'all',iconCls:'iconfont icon-search'">所有新闻</div>
 					<div data-options="name:'sports'">体育新闻</div>
 				</div>
 				<script>

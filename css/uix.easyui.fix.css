@@ -558,7 +558,7 @@
 	background-color: #fff;
 }
 
-#uix-easyui.textbox-label {
+#uix-easyui .textbox-label {
 	width: unset;
 }
 
@@ -566,13 +566,38 @@
 	padding-left: 15px;
 }
 
-/* 密码框察看 */
-#uix-easyui .passwordbox-open {
-	background: url(../images/passwordbox_open.png) no-repeat center center;
+#uix-easyui .textbox-icon {
+	font-family: "iconfont" !important;
+	color: #666;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+#uix-easyui .textbox-icon::before {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 密码框显示密码 */
+#uix-easyui .passwordbox-open {
+	background: unset;
+}
+
+#uix-easyui .passwordbox-open::before {
+	content: "\e66d";
+}
+
+/* 隐藏密码 */
 #uix-easyui .passwordbox-close {
-	background: url(../images/passwordbox_close.png) no-repeat center center;
+	background: unset;
+}
+
+#uix-easyui .passwordbox-close::before {
+	content: "\e694";
 }
 
 #uix-easyui .searchbox .textbox-addon-right {
@@ -583,14 +608,62 @@
 	background: #f8f8f8;
 }
 
+/* 搜索框 */
 #uix-easyui .searchbox-button {
-	background: url(../images/searchbox_navigate_button.png) no-repeat center center;
+	background: unset;
+}
+
+#uix-easyui .searchbox-button::before {
+	content: "\e6ca";
 }
 
 /* 带icon的按钮 */
 #uix-easyui .l-btn-icon-left .l-btn-text:not(.l-btn-empty) {
-	margin: 3px 15px 3px 30px;
+	margin: 3px 18px 3px 28px;
 }
+
+#uix-easyui .m-btn-downarrow,
+.s-btn-downarrow {
+	display: flex;
+	background: unset;
+}
+
+#uix-easyui .m-btn-downarrow::before,
+.s-btn-downarrow::before {
+	font-family: "iconfont" !important;
+	font-size: 12px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: "\e6f0";
+	margin-top: 3px;
+}
+
+/* l-btn按钮滑过后样式 */
+.l-btn:hover {
+	background: unset;
+}
+.l-btn:hover::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* 激活态菜单 */
 #uix-easyui .menu-active {
